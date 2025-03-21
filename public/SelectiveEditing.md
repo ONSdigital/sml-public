@@ -1,5 +1,4 @@
-# Selective Editing in Python 
-# SML User Guide
+# Selective Editing in Python - SML User Guide
 
 ### Overview
 
