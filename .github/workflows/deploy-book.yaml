@@ -50,10 +50,10 @@ jobs:
         jupyter-book build public_pages/
 
     # Upload the book's HTML as an artifact
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: "_build/html"
+    #- name: Upload artifact
+    #  uses: actions/upload-pages-artifact@v3
+    #  with:
+    #    path: "_build/html"
 
     - name: "Deploy book to GitHub Pages"
       uses: peaceiris/actions-gh-pages@v3.6.1
