@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: public_guides/CellKeyPerturbation_Py
+- file: public_guides/DateAdjustment
+- file: public_guides/SelectiveEditing
+- file: public_guides/ThousandPoundCorrection
+- file: public_guides/TotalsAndComponents
+
