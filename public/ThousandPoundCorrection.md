@@ -1,4 +1,5 @@
-# Thousand Pound Correction in Python - SML User Guide
+# Thousand Pound Correction in Python 
+## SML User Guide
 
 ### Overview
 

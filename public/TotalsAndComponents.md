@@ -1,4 +1,5 @@
-# Totals and Components in Python - SML User Guide
+# Totals and Components in Python 
+## SML User Guide
 
 ### Overview
 
