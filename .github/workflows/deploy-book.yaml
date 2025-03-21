@@ -47,8 +47,8 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        jb build book -W -v --keep-going
-        #jupyter-book build .
+        #jb build book -W -v --keep-going
+        jupyter-book build .
 
     # Upload the book's HTML as an artifact
     #- name: Upload artifact
