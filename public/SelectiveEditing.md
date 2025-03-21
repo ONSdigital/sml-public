@@ -12,3 +12,6 @@
  | Outputs          | Reference, Score1, ScoreM, Final_Score, Selective Editing Marker, Predicted Marker |
  | Method Version   | 1.2.5                                                    |
 
+### Summary
+
+A description of the method
