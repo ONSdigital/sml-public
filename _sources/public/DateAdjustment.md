@@ -1,4 +1,5 @@
-# Date Adjustment in Python - SML User Guide
+# Date Adjustment in Python 
+## SML User Guide
 
 ### Overview
 
