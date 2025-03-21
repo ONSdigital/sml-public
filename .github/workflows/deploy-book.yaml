@@ -55,10 +55,15 @@ jobs:
       with:
         path: "_build/html"
 
-    # Deploy the book's HTML to GitHub Pages
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+    - name: "Deploy book to GitHub Pages"
+      uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_build/html
+        publish_dir: ./_build/html        
+
+    # Deploy the book's HTML to GitHub Pages
+    #- name: Deploy to GitHub Pages
+    #  id: deployment
+    #  uses: actions/deploy-pages@v4
+    #  with:
+    #    github_token: ${{ secrets.GITHUB_TOKEN }}
