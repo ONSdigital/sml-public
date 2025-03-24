@@ -1,7 +1,5 @@
 # SML User Guides
 
-Welcome to the Statistical Methods Library user documentation website! Here you will find User Guides for our publically available methods.
-
 ```{image} ./assets/SML_logo_shelf.png
 ---
 width: 20%
@@ -10,6 +8,8 @@ alt: SML Logo
 align: right
 ---
 ```
+
+Welcome to the Statistical Methods Library user documentation website! Here you will find User Guides for our publically available methods.
 
 ### About the Statistical Methods Library
 
