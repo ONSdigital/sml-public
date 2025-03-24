@@ -30,7 +30,7 @@ a real person, or is caused by the perturbation.
 Cell Key Perturbation is consistent and repeatable, so the same cells are 
 always perturbed in the same way.
 
-Full details of the methodology and statistical process flow are given in the Methodology section.
+Full details of the methodology and statistical process flow are given in the Methodology section of this guide.
 
 
 ## User Notes
