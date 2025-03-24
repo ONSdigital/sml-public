@@ -11,11 +11,11 @@ align: right
 ---
 ```
 
-## About the Statistical Methods Library
+### About the Statistical Methods Library
 
 The statistical methods library is a central library for approved statistical methods for use within ONS and wider and can be accessed through the SML web portal: [statisticalmethodslibrary.ons.gov.uk](https://statisticalmethodslibrary.ons.gov.uk/).
 
-## Methods
+### Methods
 
 [Cell Key Perturbation](public_guides/CellKeyPerturbation_Py.md)
 
