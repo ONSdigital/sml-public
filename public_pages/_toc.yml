@@ -3,6 +3,8 @@
 
 format: jb-book
 root: intro
+parts:
+- caption: Methods
 chapters:
 - file: public_guides/CellKeyPerturbation_Py
 - file: public_guides/DateAdjustment

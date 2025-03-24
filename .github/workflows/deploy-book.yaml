@@ -9,17 +9,17 @@ on:
     # unrelated files, you can make this run only if a file within that specific
     # folder has been modified.
     #
-    # paths:
-    # - some-subfolder/**
+    paths:
+     - public_pages/**
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
-    permissions:
+    #permissions:
       #pages: write
-      id-token: write
-      contents: write      
+      #id-token: write
+      #contents: write      
     steps:
     - name: Check out repository    
       uses: actions/checkout@v4
@@ -47,8 +47,7 @@ jobs:
     # Build the book
     - name: Build the book
       run: |
-        #jupyter-book build public_pages/
-        jupyter-book build public_pages -W -v --keep-going
+        jupyter-book build public_pages/
 
     # Upload the book's HTML as an artifact
     #- name: Upload artifact
