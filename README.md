@@ -1,1 +1,1 @@
-Publish using Jupyter Book
+Publish public SML User Guides using Jupyter Book
