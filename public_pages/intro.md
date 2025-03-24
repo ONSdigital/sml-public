@@ -1,6 +1,6 @@
-# Statistical Methods Library User Guides
+# SML User Guides
 
-Welcome to the SML user documentation website!
+Welcome to the Statistical Methods Library user documentation website!
 
 Here you will find User Guides for the methods available on the SML web portal: [statisticalmethodslibrary.ons.gov.uk](https://statisticalmethodslibrary.ons.gov.uk/).
 
