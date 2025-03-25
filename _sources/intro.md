@@ -27,3 +27,12 @@ The statistical methods library is a central library for approved statistical me
 
 [Totals and Components](public_guides/TotalsAndComponents.md)
 
+
+### License
+
+Unless stated otherwise, the SML codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation.
+
+The documentation is available under the terms of the Open Government 3.0 license.
+
+### Accessibility statement
+
