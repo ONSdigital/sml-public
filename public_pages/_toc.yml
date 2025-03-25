@@ -11,3 +11,6 @@ parts:
     - file: public_guides/SelectiveEditing
     - file: public_guides/ThousandPoundCorrection
     - file: public_guides/TotalsAndComponents
+  - caption: Accessibility
+    chapters:
+    - file: AccessibilityStatement
