@@ -29,7 +29,7 @@ repository:
 sphinx:
   config:
     language: en                                # Declare primary language to assist screen reader and browser translation tools
-    html_show_copyright: false
+    html_show_copyright: true
 
 #######################################################################################
 # Define the name of the latex output file for PDF builds
