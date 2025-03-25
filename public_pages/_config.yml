@@ -10,15 +10,15 @@ favicon: assets/favicon.ico
 
 #######################################################################################
 # HTML-specific settings
-# Add GitHub buttons to your book
+# Add GitHub buttons to book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
   use_repository_button: true
-  use_edit_page_button: false                  # Add license info to footer instead of copyright
-  extra_footer: |
-    <p>
-    Documentation: Open Government 3.0 license. SML codebase & sample code in documentation: MIT License.  
+  use_edit_page_button: false                  
+  extra_footer: |                               # Add license info to footer 
+    <p>                                         
+    License: Documentation - Open Government 3.0 license. SML codebase & sample code in documentation - MIT License.  
     </p>
 
 #######################################################################################
@@ -32,23 +32,18 @@ repository:
 # Declare primary language to assist screen reader and browser translation tools
 sphinx:
   config:
-    language: en
+    language: en                                # Declare primary language to assist screen reader and browser translation tools
     html_show_copyright: false
 
+#######################################################################################
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: smluserguides.tex
 
 #######################################################################################
-# Unused Settings - these revert to default
-
-# Force re-execution of notebooks on each build.
+# Execution settings
 # See https://jupyterbook.org/content/execute.html
-#execute:
-#  execute_notebooks: force
+execute:                                      
+  execute_notebooks: force                      # Force re-execution of notebooks on each build.
 
-# Define the name of the latex output file for PDF builds
-#latex:
-#  latex_documents:
-#    targetname: book.tex
-
-# Add a bibtex file so that we can create citations
-#bibtex_bibfiles:
-#  - references.bib
