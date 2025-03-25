@@ -4,7 +4,7 @@
 
 title: SML Public Methods
 author: ONS Statistical Methods Library
-#copyright: "2025"                               # Copyright year to be placed in the footer
+copyright: "2025"                               # Copyright year to be placed in the footer
 logo: assets/logo.svg
 favicon: assets/favicon.ico
 
@@ -16,10 +16,6 @@ html:
   use_issues_button: true
   use_repository_button: true
   use_edit_page_button: false                  
-  extra_footer: |                               # Add license info to footer 
-    <p>                                         
-    License: Documentation - Open Government 3.0 license. SML codebase & sample code in documentation - MIT License.  
-    </p>
 
 #######################################################################################
 # Information about where the book exists on the web
