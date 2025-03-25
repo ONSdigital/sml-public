@@ -4,7 +4,7 @@
 
 title: SML Public Methods
 author: ONS Statistical Methods Library
-copyright: "2025"                               # Copyright year to be placed in the footer
+#copyright: "2025"                               # Copyright year to be placed in the footer
 logo: assets/logo.svg
 favicon: assets/favicon.ico
 
@@ -18,7 +18,7 @@ html:
   use_edit_page_button: false                  # Add license info to footer instead of copyright
   extra_footer: |
     <p>
-    Unless stated otherwise, the SML codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation. The documentation is available under the terms of the Open Government 3.0 license.
+    Documentation: Open Government 3.0 license. SML codebase & sample code in documentation: MIT License.  
     </p>
 sphinx:
   config:
@@ -37,8 +37,10 @@ sphinx:
   config:
     language: en
 
+
+
 #######################################################################################
-# Unused Settings - these revert to defaults
+# Unused Settings - these revert to default
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
