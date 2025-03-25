@@ -20,9 +20,6 @@ html:
     <p>
     Documentation: Open Government 3.0 license. SML codebase & sample code in documentation: MIT License.  
     </p>
-sphinx:
-  config:
-    html_show_copyright: false
 
 #######################################################################################
 # Information about where the book exists on the web
@@ -36,7 +33,7 @@ repository:
 sphinx:
   config:
     language: en
-
+    html_show_copyright: false
 
 
 #######################################################################################
