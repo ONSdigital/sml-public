@@ -30,9 +30,9 @@ a real person, or is caused by the perturbation.
 Cell Key Perturbation is consistent and repeatable, so the same cells are 
 always perturbed in the same way.
 
-## User Notes
+# User Notes
 
-### Finding and Installing the method
+## Finding and Installing the method
 
 This method requires Python 3.7 or above and uses the pandas package.
 
@@ -52,7 +52,7 @@ In your code you can import the cell key perturbation package using:
 from cell_key_perturbation.create_perturbed_table import create_perturbed_table
 ```
 
-### Requirements and Dependencies 
+## Requirements and Dependencies 
 
 - This method requires microdata and a perturbation table (ptable) file. 
 - The microdata and the ptable each need to be supplied as a pandas dataframe.
@@ -63,7 +63,7 @@ to be applied.
 - There are no methods dependent on cell key perturbation.
 
 
-### Assumptions and Validity 
+## Assumptions and Validity 
 
 The microdata must contain one column per variable, which are expected to be 
 categorical (they can be numeric but categorical is more suitable for 
@@ -95,7 +95,7 @@ Cell Key Perturbation is consistent and repeatable, so the same cells are
 always perturbed in the same way provided the record keys are not changed.
 
 
-### How to Use the Method
+## How to Use the Method
 
 ### Method Input
 
@@ -201,7 +201,7 @@ This will be located in your installation directory. It should be read in as a p
 ptable_10_5 = pd.read_csv("ptable_10_5_rule.csv")
 ```
 
-### Worked Example
+## Worked Example
 
 1.  Install the cell key perturbation package.
 ```py
@@ -254,7 +254,7 @@ output_table = perturbed_table.drop(columns = [‘pre_sdc_count’, ‘ckey’, 
 output_table.to_csv(“yourfilename.csv”, index = False)
 ```
 
-### Other Outputs and Metadata
+## Other Outputs and Metadata
 
 In addition to the category variables and the post-perturbation count, the 
 output data set contains 5 additional columns which were used for processing. 
@@ -262,9 +262,9 @@ The ckey, pcv, pre_sdc_count and pvalue columns should be dropped before the
 contingency table is published.
 
 
-## Methodology
+# Methodology
 
-### Terminology
+## Terminology
 
 - Microdata - data at the level of individual respondents
 - Record key - A random number assigned to each record 
@@ -275,7 +275,7 @@ contingency table is published.
 - ptable - perturbation table. The look-up file containing the pvalues, this determines which cells get perturbed and by how much.
 
 
-### Statistical Process Flow / Formal Definition
+## Statistical Process Flow / Formal Definition
 
 The user is required to supply microdata and to specify which columns in the
 data they want to tabulate by. They must also supply a ptable which will 
@@ -328,7 +328,7 @@ supplied with this method, ptable_10_5, applies the 10_5 rule (supressing
 values less than 10 and rounding others to the nearest 5) for record keys 
 in the range 0-255.
 
-### Assumptions & Vailidity
+## Assumptions & Vailidity
 
 The microdata must contain one column per variable, which are expected to be 
 categorical (they can be numeric but categorical is more suitable for 
@@ -342,7 +342,7 @@ always perturbed in the same way. The record keys need to be unchanged,
 changing the record keys would create inconsistent results and provide 
 much less protection. 
 
-## Additional Information
+# Additional Information
 
 The ONS Statistical Methods Library at https://statisticalmethodslibrary.ons.gov.uk/ contains:
 -	Further information about the methods including a link to the GitHub 
@@ -350,7 +350,7 @@ repository which contains detailed API information as part of the method code.
 -	Information about other methods available through the library.
 
 
-### License
+## License
 
 Unless stated otherwise, the SML codebase is released under the MIT License. 
 This covers both the codebase and any sample code in the documentation.
