@@ -12,4 +12,10 @@
  | Outputs          | object containing results                                |
  | Method Version   | v1.2.5                                                   |
 
+ ### Summary
 
+A description of the method
+
+# User Notes
+
+### Finding and Installing the method
