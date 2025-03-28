@@ -1,7 +1,7 @@
 # Date Adjustment in Python 
-## SML User Guide
+# SML User Guide
 
-### Overview
+## Overview
 
  | Descriptive      | Details                           |
  |:---              | :----                             |
@@ -13,11 +13,11 @@
  | Method Version   | v1.2.5                            |
  | Code Repository  | [https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py](https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py) | 
 
-### Summary
+## Summary
 
 A description of the method
 
 # User Notes
 
-### Finding and Installing the method
+## Finding and Installing the method
 

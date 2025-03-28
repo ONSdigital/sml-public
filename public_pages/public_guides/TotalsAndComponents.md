@@ -1,7 +1,7 @@
 # Totals and Components in Python 
-## SML User Guide
+# SML User Guide
 
-### Overview
+## Overview
 
  | Descriptive      | Details                                                  |
  |:---              | :----                                                    |
@@ -12,10 +12,10 @@
  | Outputs          | object containing results                                |
  | Method Version   | v1.2.5                                                   |
 
- ### Summary
+## Summary
 
 A description of the method
 
 # User Notes
 
-### Finding and Installing the method
+## Finding and Installing the method

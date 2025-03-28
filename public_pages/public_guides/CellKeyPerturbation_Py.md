@@ -1,7 +1,7 @@
 # Cell Key Perturbation in Python 
-## SML User Guide
+# SML User Guide
 
-### Overview
+## Overview
 
  | Descriptive      | Details                                             |
  |:---              | :----                                               |
@@ -13,7 +13,7 @@
  | Method Version   | 2.0.0                                               |
  | Code Repository  | [https://github.com/ONSdigital/cell-key-perturbation](https://github.com/ONSdigital/cell-key-perturbation) |
  
-### Summary
+## Summary
 
 This method creates a frequency table which has had cell key perturbation 
 applied to the counts to protect against disclosure. 
@@ -32,7 +32,7 @@ always perturbed in the same way.
 
 # User Notes
 
-### Finding and Installing the method
+## Finding and Installing the method
 
 This method requires Python 3.7 or above and uses the pandas package.
 
@@ -52,7 +52,7 @@ In your code you can import the cell key perturbation package using:
 from cell_key_perturbation.create_perturbed_table import create_perturbed_table
 ```
 
-### Requirements and Dependencies 
+## Requirements and Dependencies 
 
 - This method requires microdata and a perturbation table (ptable) file. 
 - The microdata and the ptable each need to be supplied as a pandas dataframe.
@@ -63,7 +63,7 @@ to be applied.
 - There are no methods dependent on cell key perturbation.
 
 
-### Assumptions and Validity 
+## Assumptions and Validity 
 
 The microdata must contain one column per variable, which are expected to be 
 categorical (they can be numeric but categorical is more suitable for 
@@ -264,7 +264,7 @@ contingency table is published.
 
 # Methodology
 
-### Terminology
+## Terminology
 
 - Microdata - data at the level of individual respondents
 - Record key - A random number assigned to each record 
@@ -275,7 +275,7 @@ contingency table is published.
 - ptable - perturbation table. The look-up file containing the pvalues, this determines which cells get perturbed and by how much.
 
 
-### Statistical Process Flow / Formal Definition
+## Statistical Process Flow / Formal Definition
 
 The user is required to supply microdata and to specify which columns in the
 data they want to tabulate by. They must also supply a ptable which will 
@@ -328,7 +328,7 @@ supplied with this method, ptable_10_5, applies the 10_5 rule (supressing
 values less than 10 and rounding others to the nearest 5) for record keys 
 in the range 0-255.
 
-### Assumptions & Vailidity
+## Assumptions & Vailidity
 
 The microdata must contain one column per variable, which are expected to be 
 categorical (they can be numeric but categorical is more suitable for 
@@ -350,7 +350,7 @@ repository which contains detailed API information as part of the method code.
 -	Information about other methods available through the library.
 
 
-### License
+## License
 
 Unless stated otherwise, the SML codebase is released under the MIT License. 
 This covers both the codebase and any sample code in the documentation.
