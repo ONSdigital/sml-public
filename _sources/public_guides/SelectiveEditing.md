@@ -1,7 +1,7 @@
 # Selective Editing in Python 
-## SML User Guide
+# SML User Guide
 
-### Overview
+## Overview
 
  | Descriptive      | Details                                                  |
  |:---              | :----                                                    |
@@ -12,10 +12,10 @@
  | Outputs          | Reference, Score1, ScoreM, Final_Score, Selective Editing Marker, Predicted Marker |
  | Method Version   | 1.2.5                                                    |
 
-### Summary
+## Summary
 
 A description of the method
 
 # User Notes
 
-### Finding and Installing the method
+## Finding and Installing the method

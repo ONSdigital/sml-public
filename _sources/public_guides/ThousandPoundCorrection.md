@@ -1,7 +1,7 @@
 # Thousand Pound Correction in Python 
-## SML User Guide
+# SML User Guide
 
-### Overview
+## Overview
 
  | Descriptive      | Details                                                                 |
  |:---              | :----                                                                   |
@@ -12,10 +12,10 @@
  | Outputs          | TCP ratio, Final principle variable, Final target variables, TCP marker |
  | Method Version   | 1.2.5                                                                   |
 
- ### Summary
+## Summary
 
 A description of the method
 
 # User Notes
 
-### Finding and Installing the method
+## Finding and Installing the method
