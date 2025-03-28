@@ -16,6 +16,4 @@
 
 A description of the method
 
-# User Notes
 
-## Finding and Installing the method
