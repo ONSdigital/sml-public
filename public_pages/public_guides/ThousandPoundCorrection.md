@@ -12,3 +12,10 @@
  | Outputs          | TCP ratio, Final principle variable, Final target variables, TCP marker |
  | Method Version   | 1.2.5                                                                   |
 
+ ### Summary
+
+A description of the method
+
+# User Notes
+
+### Finding and Installing the method
