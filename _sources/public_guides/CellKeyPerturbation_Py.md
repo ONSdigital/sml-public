@@ -194,7 +194,7 @@ micro = generate_test_data()
 
 - **ptable_10_5_rule.csv** : file containing example ptable, ptable_10_5, which applies the 10_5 rule and has record keys in the range 0-255.
   
-This will be located in your installation directory and can be also found in the [example_data](../../example_data/CellKeyPerturbation/) folder of this repository. It should be read in as a pandas dataframe specifying the filepath:
+This will be located in your installation directory and can be also found in the [example_data](../../example_data/CellKeyPerturbation/ptable_10_5_rule.csv) folder of this repository. It should be read in as a pandas dataframe specifying the filepath:
   
 ```py
 #import pandas as pd
