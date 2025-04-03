@@ -41,9 +41,25 @@ In your code you can import the method using:
 from sml_small.editing import thousand_pounds
 ```
 
+## Requirements and Dependencies 
+
+- This method requires input data. 
+
+## Assumptions and Validity 
+
+
+* A ratio inside of the upper or lower thresholds is due to a thousand pounds error
+* If the principal variable is found to be a thousand pounds error, then it is
+ assumed that all other monetary values are also thousand pounds errors
+* The principal variable and predictive value are well correlated and are intended
+ to be reported in the same denomination (i.e., thousand pounds)
+* The principal variable and auxiliary value are well correlated and intended
+ to be reported in the same denomination (i.e., thousand pounds)
+* The auxiliary variable is known and available for all contributors processed
+ by the method
+* Thresholds set are a good indication of whether a value should be corrected
 
 ## How to Use the Method
-
 
 ### Method Input
 
@@ -90,25 +106,6 @@ Output attributes:
 * tpc_marker - 'C' for correction applied, 'N' for no correction applied, 'S' for method stop / error
 
 
-## Requirements and Dependencies 
-
-- This method requires input data. 
-
-## Assumptions and Validity 
-
-
-* A ratio inside of the upper or lower thresholds is due to a thousand pounds error
-* If the principal variable is found to be a thousand pounds error, then it is
- assumed that all other monetary values are also thousand pounds errors
-* The principal variable and predictive value are well correlated and are intended
- to be reported in the same denomination (i.e., thousand pounds)
-* The principal variable and auxiliary value are well correlated and intended
- to be reported in the same denomination (i.e., thousand pounds)
-* The auxiliary variable is known and available for all contributors processed
- by the method
-* Thresholds set are a good indication of whether a value should be corrected
-  
-
 ### Example (Synthetic) Data
 
 Files containing the example input & output data given above can be found in the [example_data](https://github.com/ONSdigital/sml-public/tree/main/example_data/ThousandPoundCorrection) folder of this repository.
@@ -128,7 +125,7 @@ Input data (pandas wrapper example):
 
 
 
-### Worked Examples
+## Worked Examples
 
 The method can be used in two ways:
 1. a single record can be specified as the input parameters to the method

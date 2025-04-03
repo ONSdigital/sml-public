@@ -415,17 +415,15 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-installing-the-method">Finding and Installing the method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-validity">Assumptions and Validity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-method">How to Use the Method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-input">Method Input</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-output">Method Output</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-validity">Assumptions and Validity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-synthetic-data">Example (Synthetic) Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
@@ -513,6 +511,27 @@ document.write(`
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sml_small.editing</span><span class="w"> </span><span class="kn">import</span> <span class="n">thousand_pounds</span>
 </pre></div>
 </div>
+</section>
+<section id="requirements-and-dependencies">
+<h2>Requirements and Dependencies<a class="headerlink" href="#requirements-and-dependencies" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This method requires input data.</p></li>
+</ul>
+</section>
+<section id="assumptions-and-validity">
+<h2>Assumptions and Validity<a class="headerlink" href="#assumptions-and-validity" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A ratio inside of the upper or lower thresholds is due to a thousand pounds error</p></li>
+<li><p>If the principal variable is found to be a thousand pounds error, then it is
+assumed that all other monetary values are also thousand pounds errors</p></li>
+<li><p>The principal variable and predictive value are well correlated and are intended
+to be reported in the same denomination (i.e., thousand pounds)</p></li>
+<li><p>The principal variable and auxiliary value are well correlated and intended
+to be reported in the same denomination (i.e., thousand pounds)</p></li>
+<li><p>The auxiliary variable is known and available for all contributors processed
+by the method</p></li>
+<li><p>Thresholds set are a good indication of whether a value should be corrected</p></li>
+</ul>
 </section>
 <section id="how-to-use-the-method">
 <h2>How to Use the Method<a class="headerlink" href="#how-to-use-the-method" title="Link to this heading">#</a></h2>
@@ -607,27 +626,6 @@ document.write(`
 <li><p>tpc_marker - ‘C’ for correction applied, ‘N’ for no correction applied, ‘S’ for method stop / error</p></li>
 </ul>
 </section>
-</section>
-<section id="requirements-and-dependencies">
-<h2>Requirements and Dependencies<a class="headerlink" href="#requirements-and-dependencies" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>This method requires input data.</p></li>
-</ul>
-</section>
-<section id="assumptions-and-validity">
-<h2>Assumptions and Validity<a class="headerlink" href="#assumptions-and-validity" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>A ratio inside of the upper or lower thresholds is due to a thousand pounds error</p></li>
-<li><p>If the principal variable is found to be a thousand pounds error, then it is
-assumed that all other monetary values are also thousand pounds errors</p></li>
-<li><p>The principal variable and predictive value are well correlated and are intended
-to be reported in the same denomination (i.e., thousand pounds)</p></li>
-<li><p>The principal variable and auxiliary value are well correlated and intended
-to be reported in the same denomination (i.e., thousand pounds)</p></li>
-<li><p>The auxiliary variable is known and available for all contributors processed
-by the method</p></li>
-<li><p>Thresholds set are a good indication of whether a value should be corrected</p></li>
-</ul>
 <section id="example-synthetic-data">
 <h3>Example (Synthetic) Data<a class="headerlink" href="#example-synthetic-data" title="Link to this heading">#</a></h3>
 <p>Files containing the example input &amp; output data given above can be found in the <a class="reference external" href="https://github.com/ONSdigital/sml-public/tree/main/example_data/ThousandPoundCorrection">example_data</a> folder of this repository.</p>
@@ -639,8 +637,9 @@ by the method</p></li>
 <p>Input data (pandas wrapper example):</p>
 <p><code class="docutils literal notranslate"><span class="pre">example_test_data.csv</span></code></p>
 </section>
+</section>
 <section id="worked-examples">
-<h3>Worked Examples<a class="headerlink" href="#worked-examples" title="Link to this heading">#</a></h3>
+<h2>Worked Examples<a class="headerlink" href="#worked-examples" title="Link to this heading">#</a></h2>
 <p>The method can be used in two ways:</p>
 <ol class="arabic simple">
 <li><p>a single record can be specified as the input parameters to the method</p></li>
@@ -802,7 +801,6 @@ by the method</p></li>
 </pre></div>
 </div>
 <p>After running this function, your output data will be stored in the specified directory.</p>
-</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="methodology">
@@ -992,17 +990,15 @@ contains:</p>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-installing-the-method">Finding and Installing the method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-validity">Assumptions and Validity</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-method">How to Use the Method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-input">Method Input</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-output">Method Output</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-validity">Assumptions and Validity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-synthetic-data">Example (Synthetic) Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
