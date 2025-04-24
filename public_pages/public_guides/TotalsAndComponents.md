@@ -10,7 +10,7 @@
  | Status           | Ready to Use                                             |
  | Inputs           | identifier, total, components, amend_total, predictive, precision, auxiliary, absolute_difference_threshold, percentage_difference_threshold |
  | Outputs          | object containing results                                |
- | Method Version   | v1.2.5                                                   |
+ | Method Version   | 1.2.5                                                   |
  | Code Repository  | [https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/totals_and_components/totals_and_components.py](https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/totals_and_components/totals_and_components.py) | 
 
 ## Summary
