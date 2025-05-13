@@ -21,3 +21,4 @@ where {kbd}`Enter` can be used to select that option and display the associated 
 We’re always looking to improve the accessibility of our guidance.
 If you find any problems not listed on this page or think that we’re not meeting accessibility requirements, please contact us by emailing [SMLHelp@ons.gov.uk](mailto:SMLHelp@ons.gov.uk).
 Please also get in touch if you are unable to access any part of this guidance, or require the content in a different format.
+
