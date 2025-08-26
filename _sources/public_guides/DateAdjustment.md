@@ -316,7 +316,7 @@ contains:
 -	Information about other methods available through the library.
 
 
-### License
+## License
 
 Unless stated otherwise, the SML codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation.
 
