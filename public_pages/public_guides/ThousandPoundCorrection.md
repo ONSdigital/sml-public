@@ -106,7 +106,7 @@ Output attributes:
 * tpc_marker - 'C' for correction applied, 'N' for no correction applied, 'S' for method stop / error
 
 
-### Example (Synthetic) Data
+## Example (Synthetic) Data
 
 Files containing the example input & output data given above can be found in the [example_data](https://github.com/ONSdigital/sml-public/tree/main/example_data/ThousandPoundCorrection) folder of this repository.
 

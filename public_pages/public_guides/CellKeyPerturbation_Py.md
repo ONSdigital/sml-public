@@ -181,7 +181,7 @@ The ckey, pcv, pre_sdc_count and pvalue columns should be dropped before the
 contingency table is published.
 
 
-### Example (Synthetic) Data
+## Example (Synthetic) Data
 
 The following are included in the method package: 
 
