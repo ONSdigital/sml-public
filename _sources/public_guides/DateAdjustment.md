@@ -174,7 +174,7 @@ New columns are produced from running the method and are described below:
 | 5 | 2022-05-30 | 2022-06-28 | 1027 | 2022-06-01 | 2022-06-30 | A | N | N | N | N | 24 | 42 |   | 4.400000000000001 | 30 | 2022-06-01 | 2022-06-30 | 30 | 4.400000000000001 | 1027.0 |
 
 
-### Example (Synthetic) Data
+## Example (Synthetic) Data
 
 Files containing the example input & output data given above can be found in the [example_data](https://github.com/ONSdigital/sml-public/tree/main/example_data/DateAdjustment) folder of this repository.
 

@@ -141,7 +141,7 @@ Note that in this example, References 49900001 and 49900004 do not have predicte
 score calculation. You can see the blank cells for the predicted values and question_1_pm is False.  This shows that the auxillary value is used for these respondents. The rest of the respondents have the predicted value
 available and therefore, question_1_pm is True.
 
-### Example (Synthetic) Data
+## Example (Synthetic) Data
 
 Files containing the example input and output data given above can be found in the [example_data](https://github.com/ONSdigital/sml-public/tree/main/example_data/SelectiveEditing) of this repository.
 

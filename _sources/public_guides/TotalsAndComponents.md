@@ -128,7 +128,7 @@ The TCC marker returned show if and what the method has corrected:
 | 4 |    | 9729.9 | 11892.1 | 10811 | ['9201', '866', '632', '112']                                |   N | 
 | 5 |    | 9729.9 | 11892.1 | 12492 | ['9201', '866', '632', '112']                                |   M | 
 
-### Example (Synthetic) Data
+## Example (Synthetic) Data
 
 Files containing the example input & output data given above can be found in the [example_data](https://github.com/ONSdigital/sml-public/tree/main/example_data/TotalsAndComponents) folder of this repository.
 
