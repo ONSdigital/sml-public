@@ -1,2 +1,27 @@
+# Build
 build/
 public_pages/_build/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+
+# VS Code project settings
+.vscode
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
