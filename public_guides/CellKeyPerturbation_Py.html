@@ -1,0 +1,1070 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cell Key Perturbation in Python &#8212; SML Public Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'public_guides/CellKeyPerturbation_Py';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Date Adjustment in Python" href="DateAdjustment.html" />
+    <link rel="prev" title="SML User Guides" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="SML Public Methods - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SML Public Methods - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    SML User Guides
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cell Key Perturbation in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DateAdjustment.html">Date Adjustment in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="SelectiveEditing.html">Selective Editing in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ThousandPoundCorrection.html">Thousand Pound Correction in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="TotalsAndComponents.html">Totals and Components in Python</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Accessibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AccessibilityStatement.html">Accessibility Statement</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ONSDigital/sml-jbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ONSDigital/sml-jbook/issues/new?title=Issue%20on%20page%20%2Fpublic_guides/CellKeyPerturbation_Py.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/public_guides/CellKeyPerturbation_Py.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cell Key Perturbation in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Cell Key Perturbation in Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bigquery">BigQuery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-installing-the-method">Finding and Installing the method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microdata-and-record-keys">Microdata and Record Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-table-p-table">Perturbation Table (P-table)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-sml-method">Using the SML method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-method-in-bigquery">How to Use the Method in BigQuery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-with-synthetic-data-in-pandas">Worked Example with Synthetic Data in pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-output">Interpreting the Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-output">Saving the Output</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodolgy-statistical-process-flow">Methodolgy - Statistical Process Flow</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cell-key-perturbation-in-python">
+<h1>Cell Key Perturbation in Python<a class="headerlink" href="#cell-key-perturbation-in-python" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sml-user-guide">
+<h1>SML User Guide<a class="headerlink" href="#sml-user-guide" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Descriptive</p></th>
+<th class="head text-left"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Support Area</p></td>
+<td class="text-left"><p>Statistical Disclosure Control</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Method Theme</p></td>
+<td class="text-left"><p>Statistical Disclosure Control</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Status</p></td>
+<td class="text-left"><p>Ready to Use</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Inputs</p></td>
+<td class="text-left"><p>data, ptable, record_key, geog, tab_vars, threshold</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Outputs</p></td>
+<td class="text-left"><p>frequency table with cell key perturbation applied</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Method Version</p></td>
+<td class="text-left"><p>3.0.0</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Code Repository</p></td>
+<td class="text-left"><p><a class="github reference external" href="https://github.com/ONSdigital/cell-key-perturbation">ONSdigital/cell-key-perturbation</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>This method creates a frequency table which has had cell key perturbation
+applied to the counts to protect against disclosure.</p>
+<p>Cell key perturbation adds small amounts of noise to frequency tables.
+Noise is added to change the counts that appear
+in the frequency table by small amounts, for example a 14 is changed to a 15.
+This noise introduces uncertainty in the counts and makes it harder to identify
+individuals, especially when taking the ‘difference’ between two similar
+tables. It protects against the risk of disclosure by differencing since it
+cannot be determined whether a difference between two similar tables represents
+a real person, or is caused by the perturbation.</p>
+<p>Cell Key Perturbation is consistent and repeatable, so the same cells are
+always perturbed in the same way.</p>
+<p>It is expected that users will tabulate 1 to 4 variables for a particular geography level - for example, tabulate age by sex at local authority level.</p>
+<p>Cell key perturbation is currently available using Python and BigQuery.</p>
+<section id="bigquery">
+<h3>BigQuery<a class="headerlink" href="#bigquery" title="Link to this heading">#</a></h3>
+<p>BigQuery version allow users to perform perturbation without reading raw data into local memory. The package would craete the frequency table and run perturbation with a SQL query. Then, it converts the final perturbed table into a pandas dataframe as an output.</p>
+<p>This will allow users to run the method on large datasets without breaking the memory limits.</p>
+</section>
+<section id="terminology">
+<h3>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><em><strong>Microdata</strong></em> - data at the level of individual respondents</p></li>
+<li><p><em><strong>Record key</strong></em> - A random number assigned to each record</p></li>
+<li><p><em><strong>Cell value</strong></em> - The number of records or frequency for a cell</p></li>
+<li><p><em><strong>Cell key</strong></em> - The sum of record keys for a given cell</p></li>
+<li><p><em><strong>pvalue</strong></em> - perturbation value. The value of noise added to cells, e.g. +1, -1</p></li>
+<li><p><em><strong>pcv</strong></em> - perturbation cell value. This is an amended cell value needed to merge on the ptable</p></li>
+<li><p><em><strong>ptable</strong></em> - perturbation table. The look-up file containing the pvalues, this determines which cells get perturbed and by how much.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="user-notes">
+<h1>User Notes<a class="headerlink" href="#user-notes" title="Link to this heading">#</a></h1>
+<section id="finding-and-installing-the-method">
+<h2>Finding and Installing the method<a class="headerlink" href="#finding-and-installing-the-method" title="Link to this heading">#</a></h2>
+<p>This method requires Python 3.7 or above and uses the pandas package.</p>
+<blockquote>
+<div><p><sub>To prevent downgrading software on your system, we recommend creating a virtual environment to install and run SML methods. This will enable you to install the method with the required version of Python, etc, without disrupting the newer versions you may be running on your system. </sub></p>
+</div></blockquote>
+<p>The method package can be installed from PyPI/Artifactory using the following
+code in the terminal or command prompt:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cell_key_perturbation</span>
+</pre></div>
+</div>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This method requires microdata and a perturbation table (ptable) file.</p></li>
+<li><p>The microdata and the ptable both need to be supplied as pandas dataframes or BigQuery tables.</p></li>
+<li><p>The microdata must include a record key variable for cell key perturbation to be applied.</p></li>
+</ul>
+<section id="microdata-and-record-keys">
+<h3>Microdata and Record Keys<a class="headerlink" href="#microdata-and-record-keys" title="Link to this heading">#</a></h3>
+<p><strong>Microdata</strong> must be row-level, i.e. one row per statistical unit such as person or household. <strong>Microdata</strong> must contain one column per variable, which are expected to be categorical (they can be numeric but categorical is more suitable for frequency tables).</p>
+<p><strong>Record keys</strong> should already be attached to the <strong>microdata</strong> as a column of integers in the range 0-255 or 0-4095. The name of the <strong>record key</strong> column could change in different <strong>microdata</strong> tables. For example, <strong>record key</strong> columns in census data tables are named as <code class="docutils literal notranslate"><span class="pre">resident_record_key</span></code>, <code class="docutils literal notranslate"><span class="pre">household_record_key</span></code>, or <code class="docutils literal notranslate"><span class="pre">family_record_key</span></code> depending on the table type.</p>
+<p>The range of <strong>record keys</strong> should match the range of <strong>cell keys</strong> in the <strong>ptable</strong>. A warning message will be generated if those ranges do not match.</p>
+<p>Cell Key Perturbation is consistent and repeatable, so the same cells are always perturbed in the same way.</p>
+<p><strong>The <strong>record keys</strong> need to be unchanged, changing the <strong>record keys</strong> would create inconsistent results and provide much less protection. You should use <strong>record keys</strong> attached to your <strong>microdata</strong> if provided instead of creating new ones to obtain consistent perturbation across different runs.</strong></p>
+</section>
+<section id="perturbation-table-p-table">
+<h3>Perturbation Table (P-table)<a class="headerlink" href="#perturbation-table-p-table" title="Link to this heading">#</a></h3>
+<p>The <strong>perturbation table</strong> contains the parameters which determine which cells are perturbed by how much and which are not (most cells are perturbed by +0). The <strong>ptable</strong> contains each possible combination of <strong>cell key</strong> (<code class="docutils literal notranslate"><span class="pre">ckey</span></code>) and <strong>cell value</strong> (<code class="docutils literal notranslate"><span class="pre">pcv</span></code>), and the <strong>perturbation value</strong> (<code class="docutils literal notranslate"><span class="pre">pvalue</span></code>) for each combination.</p>
+<p>A sample <strong>ptable</strong> that applies the ‘10-5 rule’ is provided with the package and works with <strong>record keys</strong> in the range 0-255. This <strong>ptable</strong> will remove all cells &lt;10, and round all others to the nearest 5. This provides more protection than necessary but will ensure safe outputs.</p>
+<p>Other <strong>ptables</strong> may be available depending on the <strong>microdata</strong> used, for example census 2021 data will require the <code class="docutils literal notranslate"><span class="pre">ptable_census21</span></code> to be used and is based on cell keys in the range 0-255.</p>
+<p><strong>You must use the specific <strong>ptable</strong> provided with the <strong>microdata</strong> you are working with to ensure sufficient and consistent protection, e.g. <code class="docutils literal notranslate"><span class="pre">ptable_census21</span></code> for census 2021.</strong></p>
+</section>
+</section>
+<section id="using-the-sml-method">
+<h2>Using the SML method<a class="headerlink" href="#using-the-sml-method" title="Link to this heading">#</a></h2>
+<p>Within your working notebook (Python), you need to import the function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for pandas</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.create_perturbed_table</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_perturbed_table</span>
+
+<span class="c1"># for BigQuery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.bigquery</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_perturbed_table_bigquery</span>
+</pre></div>
+</div>
+<p>You can then call the method using the following parameters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># for pandas</span>
+<span class="n">create_perturbed_table</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ptable</span><span class="p">,</span> <span class="n">geog</span><span class="p">,</span> <span class="n">tab_vars</span><span class="p">,</span> <span class="n">record_key</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+
+<span class="c1"># for BigQuery</span>
+<span class="n">create_perturbed_table_bigquery</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ptable</span><span class="p">,</span> <span class="n">geog</span><span class="p">,</span> <span class="n">tab_vars</span><span class="p">,</span> <span class="n">record_key</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parameters specific for BigQuery version:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">client</span></code></strong> - Google Cloud BigQuery Client object</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> - (Microdata) - a <code class="docutils literal notranslate"><span class="pre">string</span></code> for the full name of micro-level <code class="docutils literal notranslate"><span class="pre">data</span></code> in BigQuery in “&lt;PROJECT&gt;.&lt;DATASET&gt;.&lt;TABLE&gt;” format.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ptable</span></code></strong> - (Perturbation table) - a <code class="docutils literal notranslate"><span class="pre">string</span></code> for the full name of <code class="docutils literal notranslate"><span class="pre">ptable</span></code> in BigQuery in “&lt;PROJECT&gt;.&lt;DATASET&gt;.&lt;TABLE&gt;” format.</p></li>
+</ul>
+<p>Parameters specific for pandas version:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">data</span></code></strong> - (Microdata) - a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> containing the micro-level <code class="docutils literal notranslate"><span class="pre">data</span></code> to be tabulated and perturbed.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ptable</span></code></strong> - (Perturbation table) - a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> containing the <code class="docutils literal notranslate"><span class="pre">ptable</span></code> file which determines when
+perturbation is applied.</p></li>
+</ul>
+<p>Common parameters for both versions:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">geog</span></code></strong> - (Geography) - a string vector giving the column name in <code class="docutils literal notranslate"><span class="pre">data</span></code> that contains the desired geography level you wish to tabulate at, e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;Local_Authority&quot;,</span> <span class="pre">&quot;Ward&quot;]</span></code>. This can be the empty vector, <code class="docutils literal notranslate"><span class="pre">geog=[]</span></code>, if no geography level is required.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tab_vars</span></code></strong> - (Variables to tabulate) - a string vector giving the column names in <code class="docutils literal notranslate"><span class="pre">data</span></code> of the variables to be tabulated e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;Age&quot;,&quot;Health&quot;,&quot;Occupation&quot;]</span></code>. This can also be the empty vector, <code class="docutils literal notranslate"><span class="pre">tab_vars=[]</span></code>. However, at least one of <code class="docutils literal notranslate"><span class="pre">tab_vars</span></code> or <code class="docutils literal notranslate"><span class="pre">geog</span></code> must be populated. if both are left blank an error message will be returned.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">record_key</span></code></strong> - a string containing the column name in <code class="docutils literal notranslate"><span class="pre">data</span></code> giving the record keys required for perturbation.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">threshold</span></code></strong> - the value below which a count is suppressed (default 10).</p></li>
+</ul>
+</section>
+<section id="how-to-use-the-method-in-bigquery">
+<h2>How to Use the Method in BigQuery<a class="headerlink" href="#how-to-use-the-method-in-bigquery" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Import <code class="docutils literal notranslate"><span class="pre">create_perturbed_table_bigquery()</span></code> function and define the BigQuery client:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.bigquery</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_perturbed_table_bigquery</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">bigquery</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">bigquery</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Define full names of the microdata and perturbation table in the BigQuery with full location, for example:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">microdata</span> <span class="o">=</span> <span class="s2">&quot;&lt;PROJECT_ID&gt;.&lt;DATASET_ID&gt;.&lt;microdata&gt;&quot;</span>
+<span class="n">ptable</span> <span class="o">=</span> <span class="s2">&quot;&lt;PROJECT_ID&gt;.&lt;DATASET_ID&gt;.&lt;ptable&gt;&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Define variables and parameters, for example:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geog</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span>
+<span class="n">tab_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span><span class="s2">&quot;Health&quot;</span><span class="p">,</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span>
+<span class="n">record_key</span> <span class="o">=</span> <span class="s2">&quot;record_key&quot;</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Call the function:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">perturbed_table</span> <span class="o">=</span> <span class="n">create_perturbed_table_bigquery</span><span class="p">(</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span><span class="p">,</span>
+                                                  <span class="n">data</span> <span class="o">=</span> <span class="n">microdata</span><span class="p">,</span>
+                                                  <span class="n">ptable</span> <span class="o">=</span> <span class="n">ptable</span><span class="p">,</span>
+                                                  <span class="n">geog</span> <span class="o">=</span> <span class="n">geog</span><span class="p">,</span>
+                                                  <span class="n">tab_vars</span> <span class="o">=</span> <span class="n">tab_vars</span><span class="p">,</span>
+                                                  <span class="n">record_key</span> <span class="o">=</span> <span class="n">record_key</span><span class="p">,</span>
+                                                  <span class="n">threshold</span> <span class="o">=</span> <span class="n">threshold</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The returned <code class="docutils literal notranslate"><span class="pre">perturbed_table</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. You need to drop disclosive columns before exporting the output from the secure data environment. Please refer to the <strong>“Interpreting the Output”</strong> and <strong>“Saving the Output”</strong> sections below for more details.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span> <span class="o">=</span> <span class="n">perturbed_table</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pre_sdc_count&quot;</span><span class="p">,</span> <span class="s2">&quot;ckey&quot;</span><span class="p">,</span> <span class="s2">&quot;pcv&quot;</span><span class="p">,</span> <span class="s2">&quot;pvalue&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="worked-example-with-synthetic-data-in-pandas">
+<h2>Worked Example with Synthetic Data in pandas<a class="headerlink" href="#worked-example-with-synthetic-data-in-pandas" title="Link to this heading">#</a></h2>
+<p>This is an example showing how to create a perturbed table from sample data
+generated with provided test data generation functions in this package
+in order to showcase the method.</p>
+<p>To generate example microdata and a perturbation table for testing purposes,
+use the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.utils.generate_test_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_test_data</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.utils.generate_test_ptable</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_ptable_10_5_rule</span>
+
+<span class="n">microdata</span> <span class="o">=</span> <span class="n">generate_test_data</span><span class="p">()</span>
+<span class="n">ptable_10_5</span> <span class="o">=</span> <span class="n">generate_ptable_10_5_rule</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>NOTE:</strong> Generated test microdata contains record keys. If you are testing perturbation with another microdata, you can generate and attach random record keys in the range 0-255 as following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.utils.generate_record_key</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_random_rkey</span>
+
+<span class="n">microdata</span> <span class="o">=</span> <span class="n">generate_random_rkey</span><span class="p">(</span><span class="n">microdata</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">microdata</span></code></strong>: A sample <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> containing randomly generated microdata and record keys.</p></li>
+</ul>
+<p>Example rows of a microdata table are shown below:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>record_key</p></th>
+<th class="head text-left"><p>var1</p></th>
+<th class="head text-left"><p>var5</p></th>
+<th class="head text-left"><p>var8</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>84</p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>9</p></td>
+<td class="text-left"><p>D</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>108</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>9</p></td>
+<td class="text-left"><p>C</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>212</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>D</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>212</p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>A</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>86</p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>4</p></td>
+<td class="text-left"><p>A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ptable_10_5</span></code></strong>: A sample perturbation table (<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>) that defines the cell key perturbation rules. This specific table applies the ’10 to 5 rule’, which means a suppression threshold of <em>10</em> and rounding to the nearest <em>5</em>. In other words, this ptable will remove all cells under <em>10</em>, and round all others to the nearest <em>5</em>.</p></li>
+</ul>
+<p>Example rows of a ptable are shown below:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>pcv</p></th>
+<th class="head text-left"><p>ckey</p></th>
+<th class="head text-left"><p>pvalue</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>0</p></td>
+<td class="text-left"><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>-1</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>-1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>750</p></td>
+<td class="text-left"><p>255</p></td>
+<td class="text-left"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To create a perturbed table, first import the main function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cell_key_perturbation.create_perturbed_table</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_perturbed_table</span>
+</pre></div>
+</div>
+<p>Then, use the following code to generate the perturbed table using the sample microdata and perturbation table:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">perturbed_table</span> <span class="o">=</span> <span class="n">create_perturbed_table</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">microdata</span><span class="p">,</span>
+                                         <span class="n">record_key</span> <span class="o">=</span> <span class="s2">&quot;record_key&quot;</span><span class="p">,</span>
+                                         <span class="n">geog</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;var1&quot;</span><span class="p">],</span>
+                                         <span class="n">tab_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;var5&quot;</span><span class="p">,</span><span class="s2">&quot;var8&quot;</span><span class="p">],</span>
+                                         <span class="n">ptable</span> <span class="o">=</span> <span class="n">ptable_10_5</span><span class="p">,</span>
+                                         <span class="n">threshold</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="interpreting-the-output">
+<h2>Interpreting the Output<a class="headerlink" href="#interpreting-the-output" title="Link to this heading">#</a></h2>
+<p>The output from the code is a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> containing a frequency table with
+the counts having been affected by perturbation, as specified in the ptable.</p>
+<p>For most ptables, the most obvious effect will be that all counts less than the threshold will have been removed. Removing counts below a threshold is a condition of exporting data from IDS and many other secure environments.</p>
+<p>The table will be in the following format:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>var1</p></th>
+<th class="head text-left"><p>var5</p></th>
+<th class="head text-left"><p>var8</p></th>
+<th class="head text-left"><p>pre_sdc_count</p></th>
+<th class="head text-left"><p>ckey</p></th>
+<th class="head text-left"><p>pcv</p></th>
+<th class="head text-left"><p>pvalue</p></th>
+<th class="head text-left"><p>count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>A</p></td>
+<td class="text-left"><p>10</p></td>
+<td class="text-left"><p>173</p></td>
+<td class="text-left"><p>10</p></td>
+<td class="text-left"><p>0</p></td>
+<td class="text-left"><p>10</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>B</p></td>
+<td class="text-left"><p>10</p></td>
+<td class="text-left"><p>88</p></td>
+<td class="text-left"><p>10</p></td>
+<td class="text-left"><p>0</p></td>
+<td class="text-left"><p>10</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>C</p></td>
+<td class="text-left"><p>7</p></td>
+<td class="text-left"><p>180</p></td>
+<td class="text-left"><p>7</p></td>
+<td class="text-left"><p>-7</p></td>
+<td class="text-left"><p>nan</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>D</p></td>
+<td class="text-left"><p>14</p></td>
+<td class="text-left"><p>66</p></td>
+<td class="text-left"><p>14</p></td>
+<td class="text-left"><p>1</p></td>
+<td class="text-left"><p>15</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>2</p></td>
+<td class="text-left"><p>A</p></td>
+<td class="text-left"><p>11</p></td>
+<td class="text-left"><p>190</p></td>
+<td class="text-left"><p>11</p></td>
+<td class="text-left"><p>-1</p></td>
+<td class="text-left"><p>10</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+<td class="text-left"><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The table contains the variables used as the categories used to summarise the
+data (in this example <code class="docutils literal notranslate"><span class="pre">var1</span></code>, <code class="docutils literal notranslate"><span class="pre">var5</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">var8</span></code>), and five other columns:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ckey</span></code> is the sum of record keys for each combination of variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pcv</span></code> is the perturbation cell value, the pre-perturbation count modulo 750.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pre_sdc_count</span></code> is the pre-perturbation count.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pvalue</span></code> is the perturbation applied to the original count, most commonly
+it will be 0. This is obtained from the ptable using a join on <code class="docutils literal notranslate"><span class="pre">ckey</span></code> and <code class="docutils literal notranslate"><span class="pre">pcv</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> is the post-perturbation count, the values to be output. It will be
+set to <code class="docutils literal notranslate"><span class="pre">NaN</span></code> if the value is suppressed for being below the threshold.</p></li>
+</ul>
+<p>The columns you are most likely interested in are the variables, which
+are the categories you’ve summarised by, plus the <code class="docutils literal notranslate"><span class="pre">count</span></code> column.</p>
+<p><strong>WARNING! - The <code class="docutils literal notranslate"><span class="pre">ckey</span></code>, <code class="docutils literal notranslate"><span class="pre">pcv</span></code>, <code class="docutils literal notranslate"><span class="pre">pre_sdc_count</span></code> and <code class="docutils literal notranslate"><span class="pre">pvalue</span></code> columns should be dropped before the
+contingency table is published. Otherwise, the perturbation can be unpicked and the output will be disclosive.</strong></p>
+</section>
+<section id="saving-the-output">
+<h2>Saving the Output<a class="headerlink" href="#saving-the-output" title="Link to this heading">#</a></h2>
+<p>Before the data are ready to be output the disclosive columns must be dropped. These cannot be output as they would allow for the perturbation to be unpicked. This code assumes that you have not changed the default column names; please update it if you have. <code class="docutils literal notranslate"><span class="pre">drop()</span></code> will work on a list of column names in this case, and this code puts it in a new dataframe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span> <span class="o">=</span> <span class="n">perturbed_table</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pre_sdc_count&quot;</span><span class="p">,</span> <span class="s2">&quot;ckey&quot;</span><span class="p">,</span> <span class="s2">&quot;pcv&quot;</span><span class="p">,</span> <span class="s2">&quot;pvalue&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>To save this dataframe as a csv use the pandas to_csv method:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="err">“</span><span class="n">yourfilename</span><span class="o">.</span><span class="n">csv</span><span class="err">”</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Your file name should end “.csv”. If you only specify a file name in the path it will save to your main directory. Setting ‘index’ to ‘False’ here stops it from adding a new ‘index’ column with the row number. Take that part out if you do want an index column.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="methodolgy-statistical-process-flow">
+<h1>Methodolgy - Statistical Process Flow<a class="headerlink" href="#methodolgy-statistical-process-flow" title="Link to this heading">#</a></h1>
+<p>The user is required to supply <strong>microdata</strong> and to specify which columns in the
+data they want to tabulate by. They must also supply a <strong>ptable</strong> which will
+determine which cells get perturbed and by how much.</p>
+<p>The <strong>microdata</strong> needs to contain a column for <strong>record key</strong>. <strong>Record keys</strong> are
+random, uniformly distributed integers within the chosen range. Previously,
+<strong>record keys</strong> between 0-255 have been used (as for census-2021). The method has
+been extended to also handle <strong>record keys</strong> in the range 0-4096 for the purpose of
+processing administrative data.</p>
+<p>It is expected that users will tabulate 1-4 variables for a particular geography
+level e.g. tabulate age by sex at local authority level.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">create_perturbed_table()</span></code> function counts how many rows in the data
+contain each combination of categories e.g. how many respondents are of
+each age category in each local authority area. The sum of the <strong>record
+keys</strong> for each record in each cell is also calculated. Modulo 256 or 4096
+of the sum is taken so this <strong>cell key</strong> is within range. The table now has
+<strong>perturbation cell values</strong> (<code class="docutils literal notranslate"><span class="pre">pcv</span></code>) and <strong>cell keys</strong> (<code class="docutils literal notranslate"><span class="pre">ckey</span></code>).</p>
+<p>The <strong>ptable</strong> is merged with the data, matching on <code class="docutils literal notranslate"><span class="pre">pcv</span></code> and <code class="docutils literal notranslate"><span class="pre">ckey</span></code>. The merge
+provides a <code class="docutils literal notranslate"><span class="pre">pvalue</span></code> for each cell. The <strong>post perturbation count</strong> (<code class="docutils literal notranslate"><span class="pre">count</span></code>)
+is the <strong>pre-perturbation count</strong> (<code class="docutils literal notranslate"><span class="pre">pre_sdc_count</span></code>), plus the <strong>perturbation value</strong>
+(<code class="docutils literal notranslate"><span class="pre">pvalue</span></code>). After this step, the counts have had the required perturbation
+applied. The output is the frequency table with the <strong>post-perturbation count</strong> (<code class="docutils literal notranslate"><span class="pre">count</span></code>)
+column. The result is that counts have been deliberately changed based on the
+<strong>ptable</strong>, for the purpose of disclosure protection.</p>
+<p>To limit the size of the <strong>ptable</strong>, only 750 rows are used, and rows
+501-750 are used repeatedly for larger cell values. E.g. instead of
+containing 100,001 rows, when the cell value is 100,001 the 501st row
+is used. Rows 501-750 will be used for cell values of 501-750, as well
+as 751-1000, 1001-1250, 1251-1500 and so on. To achieve this effect an
+alternative cell value column (<code class="docutils literal notranslate"><span class="pre">pcv</span></code>) is calculated which will be between 0-750.
+For cell values 0-750 the <code class="docutils literal notranslate"><span class="pre">pcv</span></code> will be the same as the cell value. For
+cell values above 750, the values are transformed by -1, modulo 250,
++501. This achieves the looping effect so that cell values 751, 1001,
+1251 and so on will have a <code class="docutils literal notranslate"><span class="pre">pcv</span></code> of 501.</p>
+<p>After cell key perturbation is applied, a <strong>threshold</strong> is applied so that any
+counts below the <strong>threshold</strong> will be suppressed (set to missing). The user can
+specify the value for the <strong>threshold</strong>, but if they do not, the default value of
+10 will be applied. Setting the <strong>threshold</strong> to zero would mean no suppression is
+applied.</p>
+<p>As well as specifying the level of perturbation, the <strong>ptable</strong> can also be used
+to apply rounding, and a *<strong>threshold</strong> for small counts. The example <strong>ptable</strong>
+supplied with this method, <code class="docutils literal notranslate"><span class="pre">ptable_10_5</span></code>, applies the 10_5 rule (supressing
+values less than 10 and rounding others to the nearest 5) for <strong>record keys</strong>
+in the range 0-255.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="additional-information">
+<h1>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading">#</a></h1>
+<p>The ONS Statistical Methods Library at <a class="reference external" href="https://statisticalmethodslibrary.ons.gov.uk/">https://statisticalmethodslibrary.ons.gov.uk/</a> contains:</p>
+<ul class="simple">
+<li><p>Further information about the methods including a link to the GitHub
+repository which contains detailed API information as part of the method code.</p></li>
+<li><p>Information about other methods available through the library.</p></li>
+</ul>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>Unless stated otherwise, the SML codebase is released under the MIT License.
+This covers both the codebase and any sample code in the documentation.
+The documentation is available under the terms of the Open Government 3.0
+license.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./public_guides"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SML User Guides</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DateAdjustment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Date Adjustment in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Cell Key Perturbation in Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bigquery">BigQuery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-installing-the-method">Finding and Installing the method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microdata-and-record-keys">Microdata and Record Keys</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perturbation-table-p-table">Perturbation Table (P-table)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-sml-method">Using the SML method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-method-in-bigquery">How to Use the Method in BigQuery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-with-synthetic-data-in-pandas">Worked Example with Synthetic Data in pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpreting-the-output">Interpreting the Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-the-output">Saving the Output</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodolgy-statistical-process-flow">Methodolgy - Statistical Process Flow</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ONS Statistical Methods Library
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

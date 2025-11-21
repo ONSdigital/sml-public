@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Thousand Pound Correction in Python &#8212; SML Public Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'public_guides/ThousandPoundCorrection';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Totals and Components in Python" href="TotalsAndComponents.html" />
+    <link rel="prev" title="Selective Editing in Python" href="SelectiveEditing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="SML Public Methods - Home"/>
+    <script>document.write(`<img src="../_static/logo.svg" class="logo__image only-dark" alt="SML Public Methods - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    SML User Guides
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CellKeyPerturbation_Py.html">Cell Key Perturbation in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="DateAdjustment.html">Date Adjustment in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="SelectiveEditing.html">Selective Editing in Python</a></li>
+
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Thousand Pound Correction in Python</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="TotalsAndComponents.html">Totals and Components in Python</a></li>
+
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Accessibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../AccessibilityStatement.html">Accessibility Statement</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ONSDigital/sml-jbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ONSDigital/sml-jbook/issues/new?title=Issue%20on%20page%20%2Fpublic_guides/ThousandPoundCorrection.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/public_guides/ThousandPoundCorrection.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Thousand Pound Correction in Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thousand Pound Correction in Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-installing-the-method">Finding and Installing the method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-validity">Assumptions and Validity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-method">How to Use the Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-input">Method Input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-output">Method Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-synthetic-data">Example (Synthetic) Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-process-flow-formal-definition">Statistical Process Flow / Formal Definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="thousand-pound-correction-in-python">
+<h1>Thousand Pound Correction in Python<a class="headerlink" href="#thousand-pound-correction-in-python" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="sml-user-guide">
+<h1>SML User Guide<a class="headerlink" href="#sml-user-guide" title="Link to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Descriptive</p></th>
+<th class="head text-left"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Support Area</p></td>
+<td class="text-left"><p>Methodology – Processing, Editing &amp; Imputation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Method Theme</p></td>
+<td class="text-left"><p>Automatic Editing</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Status</p></td>
+<td class="text-left"><p>Ready to Use</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Inputs</p></td>
+<td class="text-left"><p>Unique identifier, Principle variables, Target variable(s), Predictive variable, Auxillary variable, Upper limit, Lower limit, Precision</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Outputs</p></td>
+<td class="text-left"><p>TCP ratio, Final principle variable, Final target variables, TCP marker</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Method Version</p></td>
+<td class="text-left"><p>1.2.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Code Repository</p></td>
+<td class="text-left"><p><a class="github reference external" href="https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py">ONSdigital/sml-python-small</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>The thousand pounds correction is commonly used across business surveys. A thousand pounds error occurs when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56. This method checks values against user-defined thresholds to automatically detect and correct thousand pounds errors.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="user-notes">
+<h1>User Notes<a class="headerlink" href="#user-notes" title="Link to this heading">#</a></h1>
+<section id="finding-and-installing-the-method">
+<h2>Finding and Installing the method<a class="headerlink" href="#finding-and-installing-the-method" title="Link to this heading">#</a></h2>
+<p><strong>This method requires Python &gt;=3.7.1, &lt;4.0.0 and uses the Pandas package &gt;=1.3.5, &lt;=v1.5.3.</strong></p>
+<p>If you are using Pandas &gt;=2.0 this will be uninstalled and v1.5.3 installed.</p>
+<blockquote>
+<div><p><sub>To prevent downgrading software on your system, we recommend creating a virtual environment to install and run SML methods. This will enable you to install the method with the required version of Python, etc, without disrupting the newer versions you may be running on your system. If you’re new to virtual environments, please see our guidence on installing a method in the Help centre of our SML website to get started. Otherwise, use your preferred method to create a virtual environment with the correct software versions.</sub></p>
+</div></blockquote>
+<p>The method package can be installed from Artifactory/PyPI using the following code in the terminal or command prompt:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sml_small</span> 
+</pre></div>
+</div>
+<p>In your code you can import the method using:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sml_small.editing</span><span class="w"> </span><span class="kn">import</span> <span class="n">thousand_pounds</span>
+</pre></div>
+</div>
+</section>
+<section id="requirements-and-dependencies">
+<h2>Requirements and Dependencies<a class="headerlink" href="#requirements-and-dependencies" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This method requires input data.</p></li>
+</ul>
+</section>
+<section id="assumptions-and-validity">
+<h2>Assumptions and Validity<a class="headerlink" href="#assumptions-and-validity" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>A ratio inside of the upper or lower thresholds is due to a thousand pounds error</p></li>
+<li><p>If the principal variable is found to be a thousand pounds error, then it is
+assumed that all other monetary values are also thousand pounds errors</p></li>
+<li><p>The principal variable and predictive value are well correlated and are intended
+to be reported in the same denomination (i.e., thousand pounds)</p></li>
+<li><p>The principal variable and auxiliary value are well correlated and intended
+to be reported in the same denomination (i.e., thousand pounds)</p></li>
+<li><p>The auxiliary variable is known and available for all contributors processed
+by the method</p></li>
+<li><p>Thresholds set are a good indication of whether a value should be corrected</p></li>
+</ul>
+</section>
+<section id="how-to-use-the-method">
+<h2>How to Use the Method<a class="headerlink" href="#how-to-use-the-method" title="Link to this heading">#</a></h2>
+<section id="method-input">
+<h3>Method Input<a class="headerlink" href="#method-input" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>unique_identifier: Optional,  A question code/ruref/period/id/combination of all of these, string</p></li>
+<li><p>principal_variable: Original response value provided for the ‘current’ period, float</p></li>
+<li><p>predictive: Optional, Value used for ‘previous’ response (Returned/Imputed/Constructed), float</p></li>
+<li><p>auxiliary: Optional,  Calculated response for the ‘previous’ period, float</p></li>
+<li><p>upper_limit: Upper bound of ‘error value’ threshold, float</p></li>
+<li><p>lower_limit: Lower bound of ‘error value’ threshold, float</p></li>
+<li><p>target_variables: List[TargetVariable], identifier/value pairs</p></li>
+<li><p>precision: Optional,  Precision is used by the decimal package to ensure a specified accuracy used throughout method processing, int</p></li>
+</ul>
+<p>This table shows an example of input values for a single row of data.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>unique_identifier</p></th>
+<th class="head"><p>principal_variable</p></th>
+<th class="head"><p>predictive</p></th>
+<th class="head"><p>auxiliary</p></th>
+<th class="head"><p>upper_limit</p></th>
+<th class="head"><p>lower_limit</p></th>
+<th class="head"><p>precision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12340000001-201409-q100</p></td>
+<td><p>50000000</p></td>
+<td><p>60000</p></td>
+<td><p>30000</p></td>
+<td><p>1350</p></td>
+<td><p>350</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Target variables are stored in this format:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>identifier</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>q101</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>q102</p></td>
+<td><p>1000</p></td>
+</tr>
+<tr class="row-even"><td><p>q103</p></td>
+<td><p>1500</p></td>
+</tr>
+<tr class="row-odd"><td><p>q104</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="method-output">
+<h3>Method Output<a class="headerlink" href="#method-output" title="Link to this heading">#</a></h3>
+<p>Example output table:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>unique_identifier</p></th>
+<th class="head"><p>principal_final_value</p></th>
+<th class="head"><p>target_variables</p></th>
+<th class="head"><p>tpc_ratio</p></th>
+<th class="head"><p>tpc_marker</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘12340000001-201409-q100’</p></td>
+<td><p>‘5.0E+4’</p></td>
+<td><p>[TargetVariable(identifier=’q101’, original_value=’500’, final_value=’0.5’), TargetVariable(identifier=’q102’, original_value=’1000’, final_value=’1’), TargetVariable(identifier=’q103’, original_value=’1500’, final_value=’1.5’), TargetVariable(identifier=’q104’, original_value=None, final_value=None)]</p></td>
+<td><p>‘8.3E+2’</p></td>
+<td><p>‘C’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Output attributes:</p>
+<ul class="simple">
+<li><p>unique_identifier - A question code/ruref/period/id/combination of all of these</p></li>
+<li><p>principal_final_value – Output value that may or may not be adjusted</p></li>
+<li><p>target_variables - Identifier/value pairs which may or may not be adjusted (returned as TargetVariable objects)</p></li>
+<li><p>tpc_ratio – Ratio of the principal variable against good/predictive/auxillary response</p></li>
+<li><p>tpc_marker - ‘C’ for correction applied, ‘N’ for no correction applied, ‘S’ for method stop / error</p></li>
+</ul>
+</section>
+</section>
+<section id="example-synthetic-data">
+<h2>Example (Synthetic) Data<a class="headerlink" href="#example-synthetic-data" title="Link to this heading">#</a></h2>
+<p>Files containing the example input &amp; output data given above can be found in the <a class="reference external" href="https://github.com/ONSdigital/sml-public/tree/main/example_data/ThousandPoundCorrection">example_data</a> folder of this repository.</p>
+<p>Input data (single record example):</p>
+<p><code class="docutils literal notranslate"> <span class="pre">thousand_pounds_example.csv</span> </code>
+<code class="docutils literal notranslate"><span class="pre">target_variables.csv</span></code></p>
+<p>Expected output (single record example):</p>
+<p><code class="docutils literal notranslate"> <span class="pre">thousand_pounds_example_output.csv</span> </code></p>
+<p>Input data (pandas wrapper example):</p>
+<p><code class="docutils literal notranslate"><span class="pre">example_test_data.csv</span></code></p>
+</section>
+<section id="worked-examples">
+<h2>Worked Examples<a class="headerlink" href="#worked-examples" title="Link to this heading">#</a></h2>
+<p>The method can be used in two ways:</p>
+<ol class="arabic simple">
+<li><p>a single record can be specified as the input parameters to the method</p></li>
+<li><p>mutiple records can be supplied as a pandas dataframe to a wrapper function</p></li>
+</ol>
+<p><strong>Applying method to a single record</strong></p>
+<p>The following code can be used to run the thoudand pounds correction on a single record. This uses the input data for the single record example above.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sml_small.editing</span><span class="w"> </span><span class="kn">import</span> <span class="n">thousand_pounds</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">thousand_pounds</span><span class="p">(</span>
+    <span class="n">unique_identifier</span> <span class="o">=</span> <span class="s2">&quot;12340000001-201409-q100&quot;</span><span class="p">,</span>
+    <span class="n">principal_variable</span> <span class="o">=</span> <span class="s2">&quot;50000000&quot;</span><span class="p">,</span>
+    <span class="n">predictive</span> <span class="o">=</span> <span class="s2">&quot;60000&quot;</span><span class="p">,</span>
+    <span class="n">auxiliary</span> <span class="o">=</span> <span class="s2">&quot;30000&quot;</span><span class="p">,</span>
+    <span class="n">upper_limit</span> <span class="o">=</span> <span class="s2">&quot;1350&quot;</span><span class="p">,</span>
+    <span class="n">lower_limit</span> <span class="o">=</span> <span class="s2">&quot;350&quot;</span><span class="p">,</span>
+    <span class="n">target_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q101&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+                        <span class="s2">&quot;q102&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+                        <span class="s2">&quot;q103&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+                        <span class="s2">&quot;q104&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The output will be returned as an object. You will need to destructure the object to extract the values and one way of doing this is using the built-in function vars(). vars() is used to return the __dict__ attribute for the specified module, class, instance or any other object with a __dict__ attribute.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;unique_identifier&#39;</span>:<span class="w"> </span><span class="s1">&#39;12340000001-201409-q100&#39;</span>,<span class="w"> </span><span class="s1">&#39;principal_final_value&#39;</span>:<span class="w"> </span><span class="s1">&#39;5.0E+4&#39;</span>,<span class="w"> </span><span class="s1">&#39;target_variables&#39;</span>:<span class="w"> </span><span class="o">[</span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q101&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">&#39;500&#39;</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q102&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">&#39;1000&#39;</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q103&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">&#39;1500&#39;</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">&#39;1.5&#39;</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q104&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span>None<span class="o">)]</span>,<span class="w"> </span><span class="s1">&#39;tpc_ratio&#39;</span>:<span class="w"> </span><span class="s1">&#39;8.3E+2&#39;</span>,<span class="w"> </span><span class="s1">&#39;tpc_marker&#39;</span>:<span class="w"> </span><span class="s1">&#39;C&#39;</span><span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Applying method to multiple records</strong></p>
+<p>Alternatively, a wrapper function is supplied with the method to run the thousand pound correction for all records in a pandas dataframe.</p>
+<p>In order to run some of the functions in the python <code class="docutils literal notranslate"><span class="pre">pandas_wrapper.py</span></code>, you will need to install <code class="docutils literal notranslate"><span class="pre">regex</span></code>. You should already have installed <code class="docutils literal notranslate"><span class="pre">pandas</span></code> &gt;= v 1.3.5 &lt;= v 1.5.3.</p>
+<p>To install <code class="docutils literal notranslate"><span class="pre">regex</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">regex</span>
+</pre></div>
+</div>
+<p>To use the wrapper you will have to create a new python file that sets up the necessary functions to execute the wrapper.</p>
+<p>The code to do this is shown below. You can copy it directly into your project. This example uses the input data for the pandas wrapper example above.</p>
+<p>First, import the required packages.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">regex</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sml_small.utils.pandas_wrapper</span><span class="w"> </span><span class="kn">import</span> <span class="n">wrapper</span>
+</pre></div>
+</div>
+<p>Next, define additional functions needed to execute the wrapper.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+
+<span class="c1"># Function used to extract columns from a dataframe that are treated as a list, e.g comp_1, comp_2, comp_3</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">filter_columns_by_pattern</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">col</span><span class="p">)]</span>
+
+
+<span class="c1"># This function takes a given dataframe and will expand a provided column that contains a list</span>
+<span class="c1"># into separate columns based on the provided prefix (for plain lists) or attribute (for custom objects)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">expand_list_column</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="n">list_column_name</span><span class="p">,</span>
+    <span class="n">prefix_attribute</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">custom_prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">custom_suffix</span><span class="o">=</span><span class="s2">&quot;final_value&quot;</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">final_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+        <span class="n">list_data</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">list_column_name</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_data</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">prefix_attribute</span><span class="p">:</span>
+                <span class="c1"># If the attribute doesn&#39;t exist N/A is added</span>
+                <span class="n">column_prefix</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">prefix_attribute</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">)</span>
+                <span class="n">column_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column_prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">custom_suffix</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">final_value</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">column_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">custom_prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
+
+        <span class="n">final_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, define a function to apply the wrapper</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run_thousand_pounds_with_pandas</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">input_csv</span><span class="p">,</span> <span class="n">output_csv</span><span class="p">):</span>
+    <span class="n">input_dataframe_thousand_pounds</span> <span class="o">=</span> <span class="n">load_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">input_csv</span><span class="p">)</span>
+
+    <span class="c1"># match target variable columns q&lt;number&gt;</span>
+    <span class="n">list_column_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;q\d+&quot;</span>
+    <span class="n">target_variables</span> <span class="o">=</span> <span class="n">filter_columns_by_pattern</span><span class="p">(</span>
+        <span class="n">input_dataframe_thousand_pounds</span><span class="p">,</span> <span class="n">list_column_pattern</span>
+    <span class="p">)</span>
+
+    <span class="n">thousand_pounds_output_columns</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;principal_final_value&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;target_variables&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tpc_ratio&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;tpc_marker&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">test_thousand_pounds</span> <span class="o">=</span> <span class="n">wrapper</span><span class="p">(</span>
+        <span class="n">input_dataframe_thousand_pounds</span><span class="p">,</span>
+        <span class="s2">&quot;thousand_pounds&quot;</span><span class="p">,</span>
+        <span class="n">output_columns</span><span class="o">=</span><span class="n">thousand_pounds_output_columns</span><span class="p">,</span>
+        <span class="n">unique_identifier_column</span><span class="o">=</span><span class="s2">&quot;RU&quot;</span><span class="p">,</span>
+        <span class="n">principal_variable_column</span><span class="o">=</span><span class="s2">&quot;principal_val&quot;</span><span class="p">,</span>
+        <span class="n">target_variables_columns</span><span class="o">=</span><span class="n">target_variables</span><span class="p">,</span>
+        <span class="n">upper_limit_column</span><span class="o">=</span><span class="s2">&quot;threshold_upper&quot;</span><span class="p">,</span>
+        <span class="n">lower_limit_column</span><span class="o">=</span><span class="s2">&quot;threshold_lower&quot;</span><span class="p">,</span>
+        <span class="n">predictive_column</span><span class="o">=</span><span class="s2">&quot;predictive_val&quot;</span><span class="p">,</span>
+        <span class="n">auxiliary_column</span><span class="o">=</span><span class="s2">&quot;aux_val&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Expand columns that contain a list of objects (e.g target_variable [TargetVariable(identifier=&#39;q42&#39;, original_value=&#39;32&#39;, final_value=&#39;0.032&#39;),...])</span>
+    <span class="c1"># and create separate columns e.g: q42_final_value</span>
+    <span class="n">final_data</span> <span class="o">=</span> <span class="n">expand_list_column</span><span class="p">(</span>
+        <span class="n">df</span><span class="o">=</span><span class="n">test_thousand_pounds</span><span class="p">,</span>
+        <span class="n">list_column_name</span><span class="o">=</span><span class="s2">&quot;target_variables&quot;</span><span class="p">,</span>
+        <span class="n">prefix_attribute</span><span class="o">=</span><span class="s2">&quot;identifier&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Create a new DataFrame from the final_data list</span>
+    <span class="n">final_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
+
+    <span class="c1"># Drop the &quot;target_variables&quot; column</span>
+    <span class="n">final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target_variables&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Move the tpc_marker to be the last column</span>
+    <span class="n">column_to_move</span> <span class="o">=</span> <span class="s2">&quot;tpc_marker&quot;</span>
+
+    <span class="c1"># Define the desired column order with the specified column at the end</span>
+    <span class="n">column_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">final_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">column_to_move</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
+        <span class="n">column_to_move</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Update the DataFrame with the columns in the desired order</span>
+    <span class="n">final_df</span> <span class="o">=</span> <span class="n">final_df</span><span class="p">[</span><span class="n">column_order</span><span class="p">]</span>
+
+    <span class="c1"># Write the DataFrame to a CSV, excluding the index column</span>
+    <span class="n">csv_filename</span> <span class="o">=</span> <span class="n">path</span> <span class="o">+</span> <span class="n">output_csv</span>
+    <span class="n">final_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, apply the wrapper to your data. You will need to edit this code to match 1) the file path to the directory where you have your input data, 2) the file name of the input data, and 3) the desired file name of the output file that will be created.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">run_thousand_pounds_with_pandas</span><span class="p">(</span>
+    <span class="s2">&quot;&lt;your_file_path&gt;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;&lt;input_data_name&gt;.csv&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;&lt;output_file_name&gt;.csv&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
+<p>After running this function, your output data will be stored in the specified directory.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="methodology">
+<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">#</a></h1>
+<section id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Contributor - A member of the sample; identified by a unique identifier.</p></li>
+<li><p>Record - A set of values for each contributor and period.</p></li>
+<li><p>Target Period - The period currently undergoing data validation.</p></li>
+<li><p>Principal Variable – Variable that the method is working on and will
+determine if the remaining monetary variables, if any, will be
+automatically corrected.</p></li>
+<li><p>Target Variable(s) – List of all monetary variables that may be automatically
+corrected, excluding the principal variable.</p></li>
+<li><p>Target Record - A contributor’s record in the target period.</p></li>
+<li><p>Predictive Variable - The corresponding value used as predictor for the
+principal variable for each contributor.</p></li>
+<li><p>Predictive Record - The record containing a contributor’s predictive value.</p></li>
+<li><p>Predictive Period - The period containing predictive records; defined
+relative to the target period.</p></li>
+<li><p>Auxiliary variable - An alternative variable used as a predictor for a
+contributor’s principal variable, where the predictive value is not available
+for a given contributor (i.e. where the contributor was not sampled in the
+predictive period).</p></li>
+<li><p>Responder - A contributor who has responded to the survey within a given period.</p></li>
+<li><p>Precision – The precision value determines the level of accuracy for the
+floating point calculations in significant figures.</p></li>
+</ul>
+</section>
+<section id="statistical-process-flow-formal-definition">
+<h2>Statistical Process Flow / Formal Definition<a class="headerlink" href="#statistical-process-flow-formal-definition" title="Link to this heading">#</a></h2>
+<p>A principal variable must be specified as a priority indictor for whether a
+thousand pounds error has occurred. The method checks the principal variable
+for a given contributor to determine whether the ratio of the principal variable
+to the predictive variable is within specified upper and lower thresholds.
+If the ratio lies within these thresholds, then a thousand pounds correction is
+automatically applied to the principal variable and the rest of the target
+variables, if any, are automatically corrected.</p>
+<p>If the predictive period’s data is missing, then the method is not applied unless an appropriate variable that is well correlated with the target variable is available. The auxiliary variable should not be read into the dataif the user does not require it.</p>
+<p><strong>Error Detection</strong></p>
+<p>The error detection calculation is applied to each contributor and calculates the
+ratio of the principal variable and predictive variable at the contributor level.
+The principal variable is the current period data value and the predictive variable
+is the corresponding previous period data value (if the contributor was previously
+sampled). Previous period data can be a clean response, imputed or constructed data
+value. If there is no predictive value available (i.e., the contributor was not sampled in the previous period), then a well correlated alternative auxiliary variable can be used. Note that the auxiliary variable should be recorded in the same denomination as the target variable.</p>
+<p>If the ratio is within the specified upper and lower thresholds, then a thousand pounds error is detected.</p>
+<p>If the predictive or auxiliary variable’s value is zero or missing, then the method does not continue. A thousand pounds error is neither detected nor corrected.</p>
+<p><strong>Error Correction</strong></p>
+<p>A detected thousand pounds error will be automatically corrected by dividing the
+principal variable (i.e., suspicious returned value) by 1000 then rounding to
+the nearest whole number.</p>
+<p>All other monetary questions, the target variables excluding the principal variable,
+on the form will be automatically corrected as described without checking the
+returned or corresponding previous values.</p>
+<p><strong>Exception Handling</strong></p>
+<p>In the case of the method experiencing processing issues, the method shall not result
+in any output records. Instead, a suitable error description shall be emitted.</p>
+<section id="calculations">
+<h3>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h3>
+<p><strong>Error Detection Calculation</strong></p>
+<p>If a predictive value for the principal question <em>q</em> is available for contributor
+<em>i</em> at time <em>t-1</em>, then a thousand pounds error is detected if the following ratio
+lies within the defined lower or upper thresholds, <span class="math notranslate nohighlight">\(L_{Lower}\)</span> or <span class="math notranslate nohighlight">\(L_{Upper}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ \large L_{Lower} &lt; \frac{y_{i, q, t}}{y_{i, q, t-1}} &lt; L_{Upper} \]</div>
+<div class="highlight-asciimath notranslate"><div class="highlight"><pre><span></span>L_{Lower} &lt; \frac{y_{i, q, t}}{y_{i, q, t-1}} &lt; L_{Upper}
+</pre></div>
+</div>
+<p>Where <span class="math notranslate nohighlight">\(y_{i, q, t}\)</span> is the returned value for the principal question <em>q</em> and
+<span class="math notranslate nohighlight">\(y_{i, q, t-1}\)</span> is its corresponding previous period value. Previous period
+data may be a clean response, impute or constructed data.</p>
+<p>If the ratio lies within, and not equal to, the limits, then a thousand pounds error
+is detected; else a thousand pounds error has not been identified.</p>
+<p>If a cleared, predictive value does not exist and the user has chosen to input an
+auxiliary variable, then the error detection calculation is as follows:</p>
+<div class="math notranslate nohighlight">
+\[ \large L_{Lower} &lt; \frac{y_{i, q, t}}{x_{i, q, t}} &lt; L_{Upper} \]</div>
+<div class="highlight-asciimath notranslate"><div class="highlight"><pre><span></span>L_{Lower} &lt; \frac{y_{i, q, t}}{x_{i, q, t}} &lt; L_{Upper}
+</pre></div>
+</div>
+<p>Where <span class="math notranslate nohighlight">\(x_{i, q, t}\)</span> is the well correlated auxiliary variable for contributor
+<em>i</em> and appropriately converted to the same denomination as the principal
+variable, if necessary.</p>
+<p>If the ratio lies within the limits, then a thousand pounds error is detected;
+else a thousand pounds error has not been identified.</p>
+<p><strong>Error Correction Calculation</strong></p>
+<p>A detected error for question <em>q</em> is automatically corrected for
+contributor <em>i</em> at time <em>t</em> by:</p>
+<div class="math notranslate nohighlight">
+\[ \large \hat{y}\_{i, q, t} = \frac{y_{i, q, t}}{1000} \]</div>
+<div class="highlight-asciimath notranslate"><div class="highlight"><pre><span></span>\hat{y}_{i, q, t} = \frac{y_{i, q, t}}{1000}
+</pre></div>
+</div>
+<p>Where <span class="math notranslate nohighlight">\(\hat{y}\_{i, q, t}\)</span> is the corrected value.</p>
+<p>Once the principal target variable has been corrected, all other monetary values,
+the remaining target variables, for a given contributor will be automatically
+corrected by the same method as described above.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="additional-information">
+<h1>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading">#</a></h1>
+<p>The ONS Statistical Methods Library at <a class="reference external" href="https://statisticalmethodslibrary.ons.gov.uk/">https://statisticalmethodslibrary.ons.gov.uk/</a>
+contains:</p>
+<ul class="simple">
+<li><p>Further information about the methods including a link to the GitHub repository which contains detailed API information as part of the method code.</p></li>
+<li><p>Information about other methods available through the library.</p></li>
+</ul>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h2>
+<p>Unless stated otherwise, the SML codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation.</p>
+<p>The documentation is available under the terms of the Open Government 3.0 license.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./public_guides"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SelectiveEditing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Selective Editing in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TotalsAndComponents.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Totals and Components in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Thousand Pound Correction in Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-and-installing-the-method">Finding and Installing the method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements-and-dependencies">Requirements and Dependencies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-and-validity">Assumptions and Validity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-the-method">How to Use the Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-input">Method Input</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-output">Method Output</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-synthetic-data">Example (Synthetic) Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-process-flow-formal-definition">Statistical Process Flow / Formal Definition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ONS Statistical Methods Library
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
