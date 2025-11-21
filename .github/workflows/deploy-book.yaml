@@ -33,7 +33,7 @@ jobs:
     # Build the book and deploy to GitHub Pages
     - name: Build the book
       run: |
-        jupyter-book build --html public_pages/** 
+        jupyter-book build public_pages/. 
 
     - name: "Deploy book to GitHub Pages"
       uses: peaceiris/actions-gh-pages@v4
