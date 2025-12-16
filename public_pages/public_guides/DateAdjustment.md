@@ -17,6 +17,31 @@
 
 To generate summary and headline statistics for a reporting period it is important to ensure that data reported are on a consistent basis referencing the same period. However, sometimes it is not possible for data to be reported for the exact period of time required, e.g., monthly, quarterly, yearly. The responder may specify different start and end dates for which the observed (referenced as response throughout this specification) data cover. The Date Adjustment method weights the data values from the response period to approximate the values for the desired (expected) period, either by giving varying weights to trading days or giving each date the same weight.
 
+## Terminology
+
+- Expected period start date – The expected start date of the period set by the user.
+- Expected period end date – The expected end date of the period set by the user.
+- Variable(s) to be date adjusted – The user can select one or more variables to be date adjusted.
+- Contributor’s returned start date – The start date of the period returned by a respondent/observed in the data.
+- Contributor’s returned end date – The end date of the period returned by a respondent/observed in the data.
+- Domain – Classification group.
+- Set to mid-point – Allows the user to apply the mid-point method described below.
+- Set to equal weighted – Allows the user to apply the equal weighted method described below.
+- Use calendar days – Allows the user to apply the calendar days method described below.
+- Average weekly – Allows the user to apply the average weekly method described below.
+- Short period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is short.
+- Long period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is long.
+- Date mapping – This is a file which contains dates and relevant trading day weights per domain.
+- Trading day weights: These are weights associated with each day to allow the user to give a higher value to certain days relative to others in a given period. For example, setting weights of 0.2 for weekdays and 0 for weekends when considering turnover data values would imply that turnover is not generated on the weekend and is stable throughout weekdays.
+- Sum of trading day weights over contributor's period: The trading day weights will be summed over the dates returned; all dates are inclusive.
+- Number of days in contributor's returned period: The number of days returned by the contributor; all dates are inclusive.
+- Actual period start date: Will appear on the output dataset and is the start date that the output is based on.
+- Actual period end date: Will appear on the output dataset and is the end date that the output is based on.
+- Number of days in actual returned period: The number of days the user set.
+- Sum of trading day weights over actual period: The sum of the trading weights over the days set by the user.
+- Date adjusted variable: The adjusted data value based on the sum of the trading days weights ratio. 
+
+<br>
 
 # User Notes
 
@@ -236,34 +261,9 @@ output.to_csv("date_adjustment_output_data_example_1.csv")
 
 The output can be exported as a csv file and will give you the adjusted responses along with the sum of the weights.
 
+<br>
 
-# Methodology
-
-## Terminology
-
-- Expected period start date – The expected start date of the period set by the user.
-- Expected period end date – The expected end date of the period set by the user.
-- Variable(s) to be date adjusted – The user can select one or more variables to be date adjusted.
-- Contributor’s returned start date – The start date of the period returned by a respondent/observed in the data.
-- Contributor’s returned end date – The end date of the period returned by a respondent/observed in the data.
-- Domain – Classification group.
-- Set to mid-point – Allows the user to apply the mid-point method described below.
-- Set to equal weighted – Allows the user to apply the equal weighted method described below.
-- Use calendar days – Allows the user to apply the calendar days method described below.
-- Average weekly – Allows the user to apply the average weekly method described below.
-- Short period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is short.
-- Long period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is long.
-- Date mapping – This is a file which contains dates and relevant trading day weights per domain.
-- Trading day weights: These are weights associated with each day to allow the user to give a higher value to certain days relative to others in a given period. For example, setting weights of 0.2 for weekdays and 0 for weekends when considering turnover data values would imply that turnover is not generated on the weekend and is stable throughout weekdays.
-- Sum of trading day weights over contributor's period: The trading day weights will be summed over the dates returned; all dates are inclusive.
-- Number of days in contributor's returned period: The number of days returned by the contributor; all dates are inclusive.
-- Actual period start date: Will appear on the output dataset and is the start date that the output is based on.
-- Actual period end date: Will appear on the output dataset and is the end date that the output is based on.
-- Number of days in actual returned period: The number of days the user set.
-- Sum of trading day weights over actual period: The sum of the trading weights over the days set by the user.
-- Date adjusted variable: The adjusted data value based on the sum of the trading days weights ratio. 
-
-## Statistical Process Flow / Formal Definition
+# Methodology - Statistical Process Flow
 
 The basic date adjustment method is:
 

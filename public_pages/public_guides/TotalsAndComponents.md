@@ -15,7 +15,6 @@
 
 ## Summary
 
-
 The automatic editing method for totals and components correction is currently used in ONS business surveys to ensure fixed relationships between variables are satisfied. For example, when a total (e.g., total employment is collected along with the component breakdown (e.g., full-time male, full-time female, part-time male, part-time female)
 
 The primary use of the method is to automatically detect and correct errors in respondent data where fixed relationships have not been satisfied to improve the efficiency of the editing process, reduce the burden on respondents and survey validators and improve overall data quality.
@@ -24,6 +23,19 @@ This method can also be used to ensure fixed relationships between variables are
 
 This method can only be applied if all the components are of the same type e.g., all returned or imputed. Maintaining a total and components relationship where components are a combination of types (e.g., returned and imputed) is outside of the scope for this method.
 
+## Terminology
+
+- Contributor – A member of the sample; identified by a unique identifier
+- Record – A set of values for each contributor and period
+- Target Variable – The variable of interest that the method is working on, the total or components as determined by the Amend Total variable
+- Target Record – A contributor's record in the target period
+- Predictive Variable – A value used as a predictor for a contributor's target variable
+- Predictive Record – The record containing a contributor's predictive value
+- Auxiliary variable – The variable used as a predictor for a contributor’s target variable, where the predictive value is not available
+- Responder – A contributor who has responded to the survey within a given period
+- Precision - The precision value determines the level of accuracy for our floating point calculations 
+
+<br>
 
 # User Notes
 
@@ -221,22 +233,9 @@ totals_and_components_output.to_csv(
     "totals_and_components_output_data_example.csv",index=False)
 ```
 
-# Methodology
+<br>
 
-## Terminology
-
-- Contributor – A member of the sample; identified by a unique identifier
-- Record – A set of values for each contributor and period
-- Target Variable – The variable of interest that the method is working on, the total or components as determined by the Amend Total variable
-- Target Record – A contributor's record in the target period
-- Predictive Variable – A value used as a predictor for a contributor's target variable
-- Predictive Record – The record containing a contributor's predictive value
-- Auxiliary variable – The variable used as a predictor for a contributor’s target variable, where the predictive value is not available
-- Responder – A contributor who has responded to the survey within a given period
-- Precision - The precision value determines the level of accuracy for our floating point calculations 
-
-
-## Statistical Process Flow / Formal Definition
+# Methodology - Statistical Process Flow 
 
 This method firstly identifies if a given totals and components
  relationship has not been satisfied for a given contributor in
@@ -341,8 +340,7 @@ Some cases where either the target period total or the components sum equals
  correction to override the components with zeros if the difference observed is
  within the tolerances determined by the detection method. Else, the difference
  should be flagged for manual checking.
- 
- 
+  
 ### Calculations
  
 **1. Error Detection Calculations**
