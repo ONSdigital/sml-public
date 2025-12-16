@@ -34,11 +34,12 @@ It is expected that users will tabulate 1 to 4 variables for a particular geogra
 
 Cell key perturbation is currently available using Python and BigQuery. 
 
-### BigQuery
+#### BigQuery
 
 BigQuery version allow users to perform perturbation without reading raw data into local memory. The package would craete the frequency table and run perturbation with a SQL query. Then, it converts the final perturbed table into a pandas dataframe as an output. 
 
 This will allow users to run the method on large datasets without breaking the memory limits. 
+
 
 ## Terminology
 
@@ -50,6 +51,7 @@ This will allow users to run the method on large datasets without breaking the m
 - ***pcv*** - perturbation cell value. This is an amended cell value needed to merge on the ptable
 - ***ptable*** - perturbation table. The look-up file containing the pvalues, this determines which cells get perturbed and by how much.
 
+<br>
 
 # User Notes
 
@@ -294,6 +296,7 @@ output_table.to_csv(“yourfilename.csv”, index = False)
 
 Your file name should end “.csv”. If you only specify a file name in the path it will save to your main directory. Setting ‘index’ to ‘False’ here stops it from adding a new ‘index’ column with the row number. Take that part out if you do want an index column.
 
+<br>
 
 # Methodolgy - Statistical Process Flow
 
