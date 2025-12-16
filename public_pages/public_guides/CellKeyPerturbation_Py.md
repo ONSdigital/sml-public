@@ -40,7 +40,7 @@ BigQuery version allow users to perform perturbation without reading raw data in
 
 This will allow users to run the method on large datasets without breaking the memory limits. 
 
-### Terminology
+## Terminology
 
 - ***Microdata*** - data at the level of individual respondents
 - ***Record key*** - A random number assigned to each record 
