@@ -17,6 +17,31 @@
 
 The thousand pounds correction is commonly used across business surveys. A thousand pounds error occurs when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56. This method checks values against user-defined thresholds to automatically detect and correct thousand pounds errors.
 
+## Terminology
+
+* Contributor - A member of the sample; identified by a unique identifier.
+* Record - A set of values for each contributor and period.
+* Target Period - The period currently undergoing data validation.
+* Principal Variable – Variable that the method is working on and will
+ determine if the remaining monetary variables, if any, will be
+ automatically corrected.
+* Target Variable(s) – List of all monetary variables that may be automatically
+ corrected, excluding the principal variable.
+* Target Record - A contributor's record in the target period.
+* Predictive Variable - The corresponding value used as predictor for the
+ principal variable for each contributor.
+* Predictive Record - The record containing a contributor's predictive value.
+* Predictive Period - The period containing predictive records; defined
+ relative to the target period.
+* Auxiliary variable - An alternative variable used as a predictor for a
+ contributor's principal variable, where the predictive value is not available
+ for a given contributor (i.e. where the contributor was not sampled in the
+ predictive period).
+* Responder - A contributor who has responded to the survey within a given period.
+* Precision – The precision value determines the level of accuracy for the
+ floating point calculations in significant figures.
+
+ <br>
 
 # User Notes
 
@@ -308,34 +333,9 @@ run_thousand_pounds_with_pandas(
 ```
 After running this function, your output data will be stored in the specified directory.
 
+<br>
 
-# Methodology
-
-## Terminology
-
-* Contributor - A member of the sample; identified by a unique identifier.
-* Record - A set of values for each contributor and period.
-* Target Period - The period currently undergoing data validation.
-* Principal Variable – Variable that the method is working on and will
- determine if the remaining monetary variables, if any, will be
- automatically corrected.
-* Target Variable(s) – List of all monetary variables that may be automatically
- corrected, excluding the principal variable.
-* Target Record - A contributor's record in the target period.
-* Predictive Variable - The corresponding value used as predictor for the
- principal variable for each contributor.
-* Predictive Record - The record containing a contributor's predictive value.
-* Predictive Period - The period containing predictive records; defined
- relative to the target period.
-* Auxiliary variable - An alternative variable used as a predictor for a
- contributor's principal variable, where the predictive value is not available
- for a given contributor (i.e. where the contributor was not sampled in the
- predictive period).
-* Responder - A contributor who has responded to the survey within a given period.
-* Precision – The precision value determines the level of accuracy for the
- floating point calculations in significant figures.
-
-## Statistical Process Flow / Formal Definition
+# Methodology - Statistical Process Flow
 
 A principal variable must be specified as a priority indictor for whether a
  thousand pounds error has occurred. The method checks the principal variable

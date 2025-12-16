@@ -411,6 +411,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
@@ -426,12 +427,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-process-flow-formal-definition">Statistical Process Flow / Formal Definition</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-statistical-process-flow">Methodology - Statistical Process Flow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
@@ -492,6 +489,33 @@ document.write(`
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>The thousand pounds correction is commonly used across business surveys. A thousand pounds error occurs when the respondent should have reported values in thousands of pounds but has reported in actual pounds e.g., returned a value of £56,000 instead of correctly submitting 56. This method checks values against user-defined thresholds to automatically detect and correct thousand pounds errors.</p>
+</section>
+<section id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Contributor - A member of the sample; identified by a unique identifier.</p></li>
+<li><p>Record - A set of values for each contributor and period.</p></li>
+<li><p>Target Period - The period currently undergoing data validation.</p></li>
+<li><p>Principal Variable – Variable that the method is working on and will
+determine if the remaining monetary variables, if any, will be
+automatically corrected.</p></li>
+<li><p>Target Variable(s) – List of all monetary variables that may be automatically
+corrected, excluding the principal variable.</p></li>
+<li><p>Target Record - A contributor’s record in the target period.</p></li>
+<li><p>Predictive Variable - The corresponding value used as predictor for the
+principal variable for each contributor.</p></li>
+<li><p>Predictive Record - The record containing a contributor’s predictive value.</p></li>
+<li><p>Predictive Period - The period containing predictive records; defined
+relative to the target period.</p></li>
+<li><p>Auxiliary variable - An alternative variable used as a predictor for a
+contributor’s principal variable, where the predictive value is not available
+for a given contributor (i.e. where the contributor was not sampled in the
+predictive period).</p></li>
+<li><p>Responder - A contributor who has responded to the survey within a given period.</p></li>
+<li><p>Precision – The precision value determines the level of accuracy for the
+floating point calculations in significant figures.</p></li>
+</ul>
+ <br>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="user-notes">
@@ -801,38 +825,11 @@ by the method</p></li>
 </pre></div>
 </div>
 <p>After running this function, your output data will be stored in the specified directory.</p>
+<br>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="methodology">
-<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">#</a></h1>
-<section id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Contributor - A member of the sample; identified by a unique identifier.</p></li>
-<li><p>Record - A set of values for each contributor and period.</p></li>
-<li><p>Target Period - The period currently undergoing data validation.</p></li>
-<li><p>Principal Variable – Variable that the method is working on and will
-determine if the remaining monetary variables, if any, will be
-automatically corrected.</p></li>
-<li><p>Target Variable(s) – List of all monetary variables that may be automatically
-corrected, excluding the principal variable.</p></li>
-<li><p>Target Record - A contributor’s record in the target period.</p></li>
-<li><p>Predictive Variable - The corresponding value used as predictor for the
-principal variable for each contributor.</p></li>
-<li><p>Predictive Record - The record containing a contributor’s predictive value.</p></li>
-<li><p>Predictive Period - The period containing predictive records; defined
-relative to the target period.</p></li>
-<li><p>Auxiliary variable - An alternative variable used as a predictor for a
-contributor’s principal variable, where the predictive value is not available
-for a given contributor (i.e. where the contributor was not sampled in the
-predictive period).</p></li>
-<li><p>Responder - A contributor who has responded to the survey within a given period.</p></li>
-<li><p>Precision – The precision value determines the level of accuracy for the
-floating point calculations in significant figures.</p></li>
-</ul>
-</section>
-<section id="statistical-process-flow-formal-definition">
-<h2>Statistical Process Flow / Formal Definition<a class="headerlink" href="#statistical-process-flow-formal-definition" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="methodology-statistical-process-flow">
+<h1>Methodology - Statistical Process Flow<a class="headerlink" href="#methodology-statistical-process-flow" title="Link to this heading">#</a></h1>
 <p>A principal variable must be specified as a priority indictor for whether a
 thousand pounds error has occurred. The method checks the principal variable
 for a given contributor to determine whether the ratio of the principal variable
@@ -861,7 +858,7 @@ returned or corresponding previous values.</p>
 <p>In the case of the method experiencing processing issues, the method shall not result
 in any output records. Instead, a suitable error description shall be emitted.</p>
 <section id="calculations">
-<h3>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h3>
+<h2>Calculations<a class="headerlink" href="#calculations" title="Link to this heading">#</a></h2>
 <p><strong>Error Detection Calculation</strong></p>
 <p>If a predictive value for the principal question <em>q</em> is available for contributor
 <em>i</em> at time <em>t-1</em>, then a thousand pounds error is detected if the following ratio
@@ -900,7 +897,6 @@ contributor <em>i</em> at time <em>t</em> by:</p>
 <p>Once the principal target variable has been corrected, all other monetary values,
 the remaining target variables, for a given contributor will be automatically
 corrected by the same method as described above.</p>
-</section>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="additional-information">
@@ -986,6 +982,7 @@ contains:</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
@@ -1001,12 +998,8 @@ contains:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-process-flow-formal-definition">Statistical Process Flow / Formal Definition</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-statistical-process-flow">Methodology - Statistical Process Flow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculations">Calculations</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">

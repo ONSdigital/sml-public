@@ -409,6 +409,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
@@ -431,11 +432,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example">Worked Example</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-process-flow-formal-definition">Statistical Process Flow / Formal Definition</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-statistical-process-flow">Methodology - Statistical Process Flow</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 </ul>
@@ -494,6 +491,33 @@ document.write(`
 <section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>To generate summary and headline statistics for a reporting period it is important to ensure that data reported are on a consistent basis referencing the same period. However, sometimes it is not possible for data to be reported for the exact period of time required, e.g., monthly, quarterly, yearly. The responder may specify different start and end dates for which the observed (referenced as response throughout this specification) data cover. The Date Adjustment method weights the data values from the response period to approximate the values for the desired (expected) period, either by giving varying weights to trading days or giving each date the same weight.</p>
+</section>
+<section id="terminology">
+<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Expected period start date – The expected start date of the period set by the user.</p></li>
+<li><p>Expected period end date – The expected end date of the period set by the user.</p></li>
+<li><p>Variable(s) to be date adjusted – The user can select one or more variables to be date adjusted.</p></li>
+<li><p>Contributor’s returned start date – The start date of the period returned by a respondent/observed in the data.</p></li>
+<li><p>Contributor’s returned end date – The end date of the period returned by a respondent/observed in the data.</p></li>
+<li><p>Domain – Classification group.</p></li>
+<li><p>Set to mid-point – Allows the user to apply the mid-point method described below.</p></li>
+<li><p>Set to equal weighted – Allows the user to apply the equal weighted method described below.</p></li>
+<li><p>Use calendar days – Allows the user to apply the calendar days method described below.</p></li>
+<li><p>Average weekly – Allows the user to apply the average weekly method described below.</p></li>
+<li><p>Short period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is short.</p></li>
+<li><p>Long period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is long.</p></li>
+<li><p>Date mapping – This is a file which contains dates and relevant trading day weights per domain.</p></li>
+<li><p>Trading day weights: These are weights associated with each day to allow the user to give a higher value to certain days relative to others in a given period. For example, setting weights of 0.2 for weekdays and 0 for weekends when considering turnover data values would imply that turnover is not generated on the weekend and is stable throughout weekdays.</p></li>
+<li><p>Sum of trading day weights over contributor’s period: The trading day weights will be summed over the dates returned; all dates are inclusive.</p></li>
+<li><p>Number of days in contributor’s returned period: The number of days returned by the contributor; all dates are inclusive.</p></li>
+<li><p>Actual period start date: Will appear on the output dataset and is the start date that the output is based on.</p></li>
+<li><p>Actual period end date: Will appear on the output dataset and is the end date that the output is based on.</p></li>
+<li><p>Number of days in actual returned period: The number of days the user set.</p></li>
+<li><p>Sum of trading day weights over actual period: The sum of the trading weights over the days set by the user.</p></li>
+<li><p>Date adjusted variable: The adjusted data value based on the sum of the trading days weights ratio.</p></li>
+</ul>
+<br>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="user-notes">
@@ -1152,38 +1176,11 @@ document.write(`
 </pre></div>
 </div>
 <p>The output can be exported as a csv file and will give you the adjusted responses along with the sum of the weights.</p>
+<br>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="methodology">
-<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">#</a></h1>
-<section id="terminology">
-<h2>Terminology<a class="headerlink" href="#terminology" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Expected period start date – The expected start date of the period set by the user.</p></li>
-<li><p>Expected period end date – The expected end date of the period set by the user.</p></li>
-<li><p>Variable(s) to be date adjusted – The user can select one or more variables to be date adjusted.</p></li>
-<li><p>Contributor’s returned start date – The start date of the period returned by a respondent/observed in the data.</p></li>
-<li><p>Contributor’s returned end date – The end date of the period returned by a respondent/observed in the data.</p></li>
-<li><p>Domain – Classification group.</p></li>
-<li><p>Set to mid-point – Allows the user to apply the mid-point method described below.</p></li>
-<li><p>Set to equal weighted – Allows the user to apply the equal weighted method described below.</p></li>
-<li><p>Use calendar days – Allows the user to apply the calendar days method described below.</p></li>
-<li><p>Average weekly – Allows the user to apply the average weekly method described below.</p></li>
-<li><p>Short period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is short.</p></li>
-<li><p>Long period parameter – This is used to raise a flag to alert the user that the contributor’s returned period is long.</p></li>
-<li><p>Date mapping – This is a file which contains dates and relevant trading day weights per domain.</p></li>
-<li><p>Trading day weights: These are weights associated with each day to allow the user to give a higher value to certain days relative to others in a given period. For example, setting weights of 0.2 for weekdays and 0 for weekends when considering turnover data values would imply that turnover is not generated on the weekend and is stable throughout weekdays.</p></li>
-<li><p>Sum of trading day weights over contributor’s period: The trading day weights will be summed over the dates returned; all dates are inclusive.</p></li>
-<li><p>Number of days in contributor’s returned period: The number of days returned by the contributor; all dates are inclusive.</p></li>
-<li><p>Actual period start date: Will appear on the output dataset and is the start date that the output is based on.</p></li>
-<li><p>Actual period end date: Will appear on the output dataset and is the end date that the output is based on.</p></li>
-<li><p>Number of days in actual returned period: The number of days the user set.</p></li>
-<li><p>Sum of trading day weights over actual period: The sum of the trading weights over the days set by the user.</p></li>
-<li><p>Date adjusted variable: The adjusted data value based on the sum of the trading days weights ratio.</p></li>
-</ul>
-</section>
-<section id="statistical-process-flow-formal-definition">
-<h2>Statistical Process Flow / Formal Definition<a class="headerlink" href="#statistical-process-flow-formal-definition" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="methodology-statistical-process-flow">
+<h1>Methodology - Statistical Process Flow<a class="headerlink" href="#methodology-statistical-process-flow" title="Link to this heading">#</a></h1>
 <p>The basic date adjustment method is:</p>
 <p><code class="docutils literal notranslate"> <span class="pre">Adjusted</span> <span class="pre">response</span> <span class="pre">=</span> <span class="pre">Original</span> <span class="pre">response</span> <span class="pre">*</span> <span class="pre">Sum</span> <span class="pre">of</span> <span class="pre">weights</span> <span class="pre">of</span> <span class="pre">desired</span> <span class="pre">period</span> <span class="pre">/</span> <span class="pre">Sum</span> <span class="pre">of</span> <span class="pre">weights</span> <span class="pre">of</span> <span class="pre">response</span> </code></p>
 <p>A contributor will give a response for a period, this does not have to match the expected period, and will be fed into the method. Data which have the same returned and expected start and end dates may have this method applied but no adjustments will be made as the input data is fit for purpose. Where this is not the case trading day weights are assigned to each day covered by the contributor’s returned period and the expected period. These are then summed to provide a sum for the total trading day weights for the returned and expected periods respectively. The expected period total trading day weights are divided by the contributor’s returned period total trading day weights. This ratio is then applied to the contributor’s response so that it is representative of the expected period.</p>
@@ -1215,7 +1212,6 @@ If the mid-point lies outside of the expected period start and end dates, a “C
 The equal weighted method is where all the trading day weights are set to 1 instead of having a unique trading day weight associated with each day. This can be a useful feature when each day is of equal importance with respect to the data collected. To use this feature, the equal-weighted column should be marked as “Y”. If the user does not want the trading day weights to be equal-weighted, then please set this to “N”.</p>
 <p><strong>Average weekly – set to A or N</strong>
 The average weekly function allows the responses to be given on a weekly value rather than the period specified by the user. This can be a useful tool when the user’s period isn’t always equal, to allow the user to compare similar values. To use this feature, the average weekly value will need to be set to “A”. If the user does not want to have average weekly values in the output, then please set this to “N”.</p>
-</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="additional-information">
 <h1>Additional Information<a class="headerlink" href="#additional-information" title="Link to this heading">#</a></h1>
@@ -1300,6 +1296,7 @@ contains:</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sml-user-guide">SML User Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#user-notes">User Notes</a><ul class="visible nav section-nav flex-column">
@@ -1322,11 +1319,7 @@ contains:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example">Worked Example</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terminology">Terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-process-flow-formal-definition">Statistical Process Flow / Formal Definition</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-statistical-process-flow">Methodology - Statistical Process Flow</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-information">Additional Information</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 </ul>
