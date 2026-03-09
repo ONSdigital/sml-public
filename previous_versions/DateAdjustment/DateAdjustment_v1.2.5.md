@@ -10,7 +10,7 @@
  | Status           | Ready to Use                      |
  | Inputs           | input_dataframe, trading_weights, target_columns, contributor_returned_start_date_col, contributor_returned_end_date_col, expected_start_date_col, expected_end_date_col, domain_col, short_period_parameter_col, long_period_parameter_col, equal_weighted_col, set_to_mid_point_col, use_calendar_days_col, average_weekly_col, da_error_flag_col, trading_date_col, trading_period_start_col, trading_period_end_col, trading_weights_col, trading_domain_col |
  | Outputs          | dataframe with adjusted responses and sum of the weights |
- | Method Version   | 1.3.2                           |
+ | Method Version   | 1.2.5                            |
  | Code Repository  | [https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py](https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/date_adjustment.py) | 
 
 ## Summary
@@ -47,7 +47,12 @@ To generate summary and headline statistics for a reporting period it is importa
 
 ## Finding and Installing the method 
 
-**This method requires Python >=3.10, <3.15 and uses the Pandas package v2.2.3.**
+**This method requires Python >=3.7.1, <4.0.0 and uses the Pandas package v1.5.3.**
+
+If you are using Pandas >=2.0 this will be uninstalled and v1.5.3 installed.
+
+><sub>To prevent downgrading software on your system, we recommend creating a virtual environment to install and run SML methods. This will enable you to install the method with the required version of Python, etc, without disrupting the newer versions you may be running on your system. If you’re new to virtual environments, please see our guidence on installing a method in the Help centre of our SML website to get started. Otherwise, use your preferred method to create a virtual environment with the correct software versions.</sub>
+
 
 The method package can be installed from Artifactory/PyPI using the following code in the terminal or command prompt:
 
@@ -316,7 +321,6 @@ contains:
 Unless stated otherwise, the SML codebase is released under the MIT License. This covers both the codebase and any sample code in the documentation.
 
 The documentation is available under the terms of the Open Government 3.0 license.
-
 
 
 
