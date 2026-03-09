@@ -30,9 +30,9 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -477,7 +477,7 @@ document.write(`
 <td class="text-left"><p>TCP ratio, Final principle variable, Final target variables, TCP marker</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Method Version</p></td>
-<td class="text-left"><p>1.2.5</p></td>
+<td class="text-left"><p>1.3.2</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Code Repository</p></td>
 <td class="text-left"><p><a class="github reference external" href="https://github.com/ONSdigital/sml-python-small/blob/main/sml_small/editing/thousand_pounds/thousand_pounds.py">ONSdigital/sml-python-small</a></p></td>
@@ -522,17 +522,13 @@ floating point calculations in significant figures.</p></li>
 <h1>User Notes<a class="headerlink" href="#user-notes" title="Link to this heading">#</a></h1>
 <section id="finding-and-installing-the-method">
 <h2>Finding and Installing the method<a class="headerlink" href="#finding-and-installing-the-method" title="Link to this heading">#</a></h2>
-<p><strong>This method requires Python &gt;=3.7.1, &lt;4.0.0 and uses the Pandas package &gt;=1.3.5, &lt;=v1.5.3.</strong></p>
-<p>If you are using Pandas &gt;=2.0 this will be uninstalled and v1.5.3 installed.</p>
-<blockquote>
-<div><p><sub>To prevent downgrading software on your system, we recommend creating a virtual environment to install and run SML methods. This will enable you to install the method with the required version of Python, etc, without disrupting the newer versions you may be running on your system. If you’re new to virtual environments, please see our guidence on installing a method in the Help centre of our SML website to get started. Otherwise, use your preferred method to create a virtual environment with the correct software versions.</sub></p>
-</div></blockquote>
+<p><strong>This method requires Python &gt;=3.10, &lt;3.15 and uses the Pandas package v2.2.3.</strong></p>
 <p>The method package can be installed from Artifactory/PyPI using the following code in the terminal or command prompt:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">sml_small</span> 
 </pre></div>
 </div>
 <p>In your code you can import the method using:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sml_small.editing</span><span class="w"> </span><span class="kn">import</span> <span class="n">thousand_pounds</span>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sml_small.date_adjustment</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">date_adjust</span>
 </pre></div>
 </div>
 </section>
