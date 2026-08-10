@@ -60,7 +60,7 @@ In your code you can import the method using:
 ```py
 import sml_small.date_adjustment as date_adjust
 ```
-
+Alternatively, download the latest code from Github, then copy the sml_small folder to the relevant folder (for example "C:\ONSapps\My_Python\Python_3_8\Lib\site-packages\sml_small").
 
 ## Requirements and Dependencies 
 
@@ -88,7 +88,7 @@ The input data requires the following columns to perform the date adjustment met
 * Reference: Unique to each respondent
 * Contributors start date: Start date returned by the contributor.
 * Contributors end date: End date returned by the contributor.
-* Q20: Variable response that needs to be date adjusted.
+* Q20: Variable response that needs to be date adjusted (can be one or more variables).
 * Expected start date: Start date the user is expecting from the contributor.
 * Expected end date: End date the user is expecting from the contributor
 * Domain: Domain classification.
@@ -123,7 +123,7 @@ The trading day data requires trading day weights for all dates present and for 
 * Period_end: End date of the period
 
 
-**Example **
+**Example**
 
 | date | domain | weight | period | period_start | period_end |
 | --- | --- | --- | --- | --- | --- |
@@ -288,9 +288,9 @@ E15: Expected period end date is missing or an invalid date.
 These are NOT exceptions and do not cause the method to fail. Once an error flag has been placed on a row of data, no further processing is done to that row, preserving the data in the state it was when the flag was raised. The method will continue processing even when errors occur, this was done for historical reasons.
 
 **Set to Mid-point – set as Y or YT or N**
-A mid-point method can be used in Date Adjustment to check whether a contributor’s returned dates are within the expected period. If the mid-point of the contributor’s returned start and end dates are outside the expected period, then a “C” flag is raised in the error flag column to inform the user that the contributor’s response data aligns with a different reporting period (i.e., not the expected period). If the respondent’s mid-point does lie outside of the period, the user is interested in then date adjustment will not occur.
+A mid-point method can be used in Date Adjustment to check whether a contributor’s returned dates are within the expected period. If the mid-point of the contributor’s returned start and end dates are outside the expected period, then a “C” flag is raised in the error flag column to inform the user that the contributor’s response data aligns with a different reporting period (i.e., not the expected period). If the respondent’s mid-point does lie outside of the period the user is interested in, then date adjustment will not occur.
 
-There are two ways to use the mid-point method: set the mid-point to “Y” and set the mid-point to “YT”. Setting the mid-point input parameter to “Y” will simply calculate the mid-point of the days returned. If the number of days in the contributor’s returned period are even, then divide the count by 2 and add that to the contributor’s returned start date to find the mid-point. If the number of days in the contributor’s returned period are odd, then add 1 to the count and divide by 2. This is then added onto the contributor’s returned start date. If the user sets the mid-point input parameter to “YT”, then the method will trim any weighted days at the start or end of the contributor’s returned dates if they have trading day weights set to 0 and do the same calculation as above with regards to the number of days in the period. Therefore, each method could provide a slightly different answer. If the user does not want the mid-point method to occur, then please set this to “N”.
+There are two ways to use the mid-point method: set the mid-point to “Y” or set the mid-point to “YT”. Setting the mid-point input parameter to “Y” will simply calculate the mid-point of the days returned. If the number of days in the contributor’s returned period are even, then divide the count by 2 and add that to the contributor’s returned start date to find the mid-point. If the number of days in the contributor’s returned period are odd, then add 1 to the count and divide by 2. This is then added onto the contributor’s returned start date. If the user sets the mid-point input parameter to “YT”, then the method will trim any weighted days at the start or end of the contributor’s returned dates if they have trading day weights set to 0 and do the same calculation as above with regards to the number of days in the period. Therefore, each method could provide a slightly different answer. If the user does not want the mid-point method to occur, then please set this to “N”.
 
 **Use calendar days – set as Y or N**
 If the mid-point lies outside of the expected period start and end dates, a “C” flag is raised in the Date change column. Calendar days function will only work when there is a “C” flag present. The calendar days function, when set to “Y”, allows the user to automatically set the expected start and end period dates to the first day and last day of the month where the mid-point lies. When the calendar days function is set to “N” it allows start and end period dates to be set to the start and end dates that “C” flag lies in.
