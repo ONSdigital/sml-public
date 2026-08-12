@@ -56,7 +56,7 @@ pip install sml_small
 In your code you can import the method using:
 
 ```py
-import sml_small.date_adjustment as date_adjust
+import sml_small.selective_editing as seled
 ```
 
 ## Requirements and Dependencies 
