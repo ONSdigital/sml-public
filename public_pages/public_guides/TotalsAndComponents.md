@@ -67,6 +67,7 @@ import sml_small.date_adjustment as date_adjust
 - The method can only observe and satisfy one fixed relationship at a time (i.e., only one set of components and total)
 - Both the total value and at least one corresponding component are populated for the target period
 - The components are all the same data type e.g., all returned or imputed. The total variable type does not impact this.
+- The method has not been designed to manage negative values.
 
 
 ## How to Use the Method
@@ -151,7 +152,7 @@ Expected output after running the worked example:
 
 The method can be used in two ways:
 1. a single record can be specified as the input parameters to the method
-2. mutiple records can be supplied as a pandas dataframe to a wrapper function
+2. multiple records can be supplied as a pandas dataframe to a wrapper function
 
 
 The following code can be used to run totals & components on a single record. 
