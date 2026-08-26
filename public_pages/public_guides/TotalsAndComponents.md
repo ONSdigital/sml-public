@@ -52,8 +52,10 @@ pip install sml_small
 In your code you can import the method using:
 
 ```py
-import sml_small.date_adjustment as date_adjust
+import sml_small.utils.pandas_wrapper import wrapper
 ```
+
+Alternatively, download the latest code from Github, then copy the sml_small folder to the relevant folder (for example “C:\ONSapps\My_Python\Python_3_8\Lib\site-packages\sml_small”).
 
 ## Requirements and Dependencies 
 
