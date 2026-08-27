@@ -889,22 +889,22 @@ available and therefore, question_1_pm is True.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sml_small.selective_editing</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">seled</span>
 
 <span class="c1"># Location of csv file</span>
-<span class="n">datafile</span> <span class="o">=</span> <span class="s2">&quot;selective_editing_input_data_example_1.csv&quot;</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="s2">"selective_editing_input_data_example_1.csv"</span>
 
 <span class="c1"># Read in csv file above</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
 
 <span class="c1"># Call the Selective Editing method</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">seled</span><span class="o">.</span><span class="n">selective_editing</span><span class="p">(</span><span class="n">input_dataframe</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="c1"># DataFrame of the test data (above)</span>
-                                 <span class="n">reference_col</span> <span class="o">=</span> <span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="c1"># Reference column</span>
-                                 <span class="n">design_weight_col</span> <span class="o">=</span> <span class="s1">&#39;design_weight&#39;</span><span class="p">,</span> <span class="c1"># Design weight column</span>
-                                 <span class="n">threshold_col</span> <span class="o">=</span> <span class="s1">&#39;threshold&#39;</span><span class="p">,</span> <span class="c1"># Threshold column</span>
-                                 <span class="n">question_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;question_1&#39;</span><span class="p">],</span> <span class="c1"># Question(s) we are performing Selective Editing on</span>
-                                 <span class="n">combination_method</span> <span class="o">=</span> <span class="s1">&#39;maximum&#39;</span><span class="p">,</span> <span class="c1"># Type combination, will accept &#39;maximum&#39;, &#39;mean&#39;, &#39;weighted&#39;, &#39;minkowski&#39;, default = maximum</span>
+                                 <span class="n">reference_col</span> <span class="o">=</span> <span class="s1">'reference'</span><span class="p">,</span> <span class="c1"># Reference column</span>
+                                 <span class="n">design_weight_col</span> <span class="o">=</span> <span class="s1">'design_weight'</span><span class="p">,</span> <span class="c1"># Design weight column</span>
+                                 <span class="n">threshold_col</span> <span class="o">=</span> <span class="s1">'threshold'</span><span class="p">,</span> <span class="c1"># Threshold column</span>
+                                 <span class="n">question_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'question_1'</span><span class="p">],</span> <span class="c1"># Question(s) we are performing Selective Editing on</span>
+                                 <span class="n">combination_method</span> <span class="o">=</span> <span class="s1">'maximum'</span><span class="p">,</span> <span class="c1"># Type combination, will accept 'maximum', 'mean', 'weighted', 'minkowski', default = maximum</span>
                                  <span class="n">minkowski_distance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># Set to 0 if minkowski is not selected. Set to value of p if minkowski is selected above. </span>
                                  <span class="n">show_sums</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Provides additional data on score calculations</span>
                                  
-<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;selective_editing_output_data_example_1.csv&quot;</span><span class="p">)</span>
+<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"selective_editing_output_data_example_1.csv"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The output gets exported as a .csv file, which will be saved in your working directory.</p>

@@ -1171,42 +1171,42 @@
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sml_small.date_adjustment</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">date_adjust</span>
 
-<span class="c1"># Import datafile containing the respondent&#39;s data</span>
-<span class="n">datafile</span> <span class="o">=</span> <span class="s2">&quot;date_adjustment_input_data_example_1.csv&quot;</span>
+<span class="c1"># Import datafile containing the respondent's data</span>
+<span class="n">datafile</span> <span class="o">=</span> <span class="s2">"date_adjustment_input_data_example_1.csv"</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">datafile</span><span class="p">)</span>
 
 <span class="c1"># Import trading day weights file</span>
-<span class="n">trading_day_datafile</span> <span class="o">=</span> <span class="s2">&quot;date_adjustment_trading_day_weights_example_1.csv&quot;</span>
+<span class="n">trading_day_datafile</span> <span class="o">=</span> <span class="s2">"date_adjustment_trading_day_weights_example_1.csv"</span>
 
 <span class="n">trading_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">trading_day_datafile</span><span class="p">)</span>
 
 <span class="c1"># Match up column names with with variables below</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">date_adjust</span><span class="o">.</span><span class="n">date_adjustment</span><span class="p">(</span>
-    <span class="n">input_dataframe</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="c1"># Respondent&#39;s input dataframe</span>
+    <span class="n">input_dataframe</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="c1"># Respondent's input dataframe</span>
     <span class="n">trading_weights</span> <span class="o">=</span> <span class="n">trading_df</span><span class="p">,</span> <span class="c1"># trading day weights dataframe</span>
-    <span class="n">target_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Q20&#39;</span><span class="p">],</span> <span class="c1"># The variable that needs to be date adjusted</span>
-    <span class="n">contributor_returned_start_date_col</span> <span class="o">=</span> <span class="s2">&quot;Contributors start date&quot;</span><span class="p">,</span> <span class="c1"># Contributor returned start date</span>
-    <span class="n">contributor_returned_end_date_col</span> <span class="o">=</span> <span class="s2">&quot;Contributors end date&quot;</span><span class="p">,</span> <span class="c1"># Contributor returned end date</span>
-    <span class="n">expected_start_date_col</span> <span class="o">=</span> <span class="s2">&quot;Expected start date&quot;</span><span class="p">,</span> <span class="c1"># Expected start date</span>
-    <span class="n">expected_end_date_col</span> <span class="o">=</span> <span class="s2">&quot;Expected end date&quot;</span><span class="p">,</span> <span class="c1"># Expected end date</span>
-    <span class="n">domain_col</span> <span class="o">=</span> <span class="s2">&quot;Domain&quot;</span><span class="p">,</span> <span class="c1"># Domain classification</span>
-    <span class="n">short_period_parameter_col</span> <span class="o">=</span> <span class="s2">&quot;Short period&quot;</span><span class="p">,</span> <span class="c1"># Short period</span>
-    <span class="n">long_period_parameter_col</span> <span class="o">=</span> <span class="s2">&quot;Long period&quot;</span><span class="p">,</span> <span class="c1"># Long period</span>
-    <span class="n">equal_weighted_col</span> <span class="o">=</span> <span class="s2">&quot;Equal-weighted&quot;</span><span class="p">,</span> <span class="c1"># Equal-weighted column</span>
-    <span class="n">set_to_mid_point_col</span> <span class="o">=</span> <span class="s2">&quot;Mid-point&quot;</span><span class="p">,</span> <span class="c1"># Mid-point indicator column</span>
-    <span class="n">use_calendar_days_col</span> <span class="o">=</span> <span class="s2">&quot;Calendar days&quot;</span><span class="p">,</span> <span class="c1"># Calendar days column</span>
-    <span class="n">average_weekly_col</span> <span class="o">=</span> <span class="s2">&quot;Average Weekly&quot;</span><span class="p">,</span> <span class="c1"># Average weekly indicator</span>
-    <span class="n">da_error_flag_col</span> <span class="o">=</span> <span class="s2">&quot;Error column&quot;</span><span class="p">,</span> <span class="c1"># Column for errors to be populated</span>
-    <span class="n">trading_date_col</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="c1"># Date in the trading day dataframe</span>
-    <span class="n">trading_period_start_col</span> <span class="o">=</span> <span class="s2">&quot;period_start&quot;</span><span class="p">,</span> <span class="c1"># Start date column in trading day dataframe</span>
-    <span class="n">trading_period_end_col</span> <span class="o">=</span> <span class="s2">&quot;period_end&quot;</span><span class="p">,</span> <span class="c1"># End date column in trading day dataframe</span>
-    <span class="n">trading_weights_col</span> <span class="o">=</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="c1"># Weight values for each date</span>
-    <span class="n">trading_domain_col</span> <span class="o">=</span> <span class="s2">&quot;domain&quot;</span> <span class="c1"># Domain for each date and weight</span>
+    <span class="n">target_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Q20'</span><span class="p">],</span> <span class="c1"># The variable that needs to be date adjusted</span>
+    <span class="n">contributor_returned_start_date_col</span> <span class="o">=</span> <span class="s2">"Contributors start date"</span><span class="p">,</span> <span class="c1"># Contributor returned start date</span>
+    <span class="n">contributor_returned_end_date_col</span> <span class="o">=</span> <span class="s2">"Contributors end date"</span><span class="p">,</span> <span class="c1"># Contributor returned end date</span>
+    <span class="n">expected_start_date_col</span> <span class="o">=</span> <span class="s2">"Expected start date"</span><span class="p">,</span> <span class="c1"># Expected start date</span>
+    <span class="n">expected_end_date_col</span> <span class="o">=</span> <span class="s2">"Expected end date"</span><span class="p">,</span> <span class="c1"># Expected end date</span>
+    <span class="n">domain_col</span> <span class="o">=</span> <span class="s2">"Domain"</span><span class="p">,</span> <span class="c1"># Domain classification</span>
+    <span class="n">short_period_parameter_col</span> <span class="o">=</span> <span class="s2">"Short period"</span><span class="p">,</span> <span class="c1"># Short period</span>
+    <span class="n">long_period_parameter_col</span> <span class="o">=</span> <span class="s2">"Long period"</span><span class="p">,</span> <span class="c1"># Long period</span>
+    <span class="n">equal_weighted_col</span> <span class="o">=</span> <span class="s2">"Equal-weighted"</span><span class="p">,</span> <span class="c1"># Equal-weighted column</span>
+    <span class="n">set_to_mid_point_col</span> <span class="o">=</span> <span class="s2">"Mid-point"</span><span class="p">,</span> <span class="c1"># Mid-point indicator column</span>
+    <span class="n">use_calendar_days_col</span> <span class="o">=</span> <span class="s2">"Calendar days"</span><span class="p">,</span> <span class="c1"># Calendar days column</span>
+    <span class="n">average_weekly_col</span> <span class="o">=</span> <span class="s2">"Average Weekly"</span><span class="p">,</span> <span class="c1"># Average weekly indicator</span>
+    <span class="n">da_error_flag_col</span> <span class="o">=</span> <span class="s2">"Error column"</span><span class="p">,</span> <span class="c1"># Column for errors to be populated</span>
+    <span class="n">trading_date_col</span> <span class="o">=</span> <span class="s2">"date"</span><span class="p">,</span> <span class="c1"># Date in the trading day dataframe</span>
+    <span class="n">trading_period_start_col</span> <span class="o">=</span> <span class="s2">"period_start"</span><span class="p">,</span> <span class="c1"># Start date column in trading day dataframe</span>
+    <span class="n">trading_period_end_col</span> <span class="o">=</span> <span class="s2">"period_end"</span><span class="p">,</span> <span class="c1"># End date column in trading day dataframe</span>
+    <span class="n">trading_weights_col</span> <span class="o">=</span> <span class="s2">"weight"</span><span class="p">,</span> <span class="c1"># Weight values for each date</span>
+    <span class="n">trading_domain_col</span> <span class="o">=</span> <span class="s2">"domain"</span> <span class="c1"># Domain for each date and weight</span>
     <span class="p">)</span>
                     
 <span class="c1"># Exporting the output file to csv</span>
-<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;date_adjustment_output_data_example_1.csv&quot;</span><span class="p">)</span>
+<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"date_adjustment_output_data_example_1.csv"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The output can be exported as a csv file and will give you the adjusted responses along with the sum of the weights.</p>

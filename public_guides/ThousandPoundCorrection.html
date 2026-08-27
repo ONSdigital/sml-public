@@ -708,16 +708,16 @@ by the method</p></li>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sml_small.editing</span><span class="w"> </span><span class="kn">import</span> <span class="n">thousand_pounds</span>
 
 <span class="n">output</span> <span class="o">=</span> <span class="n">thousand_pounds</span><span class="p">(</span>
-    <span class="n">unique_identifier</span> <span class="o">=</span> <span class="s2">&quot;12340000001-201409-q100&quot;</span><span class="p">,</span>
-    <span class="n">principal_variable</span> <span class="o">=</span> <span class="s2">&quot;50000000&quot;</span><span class="p">,</span>
-    <span class="n">predictive</span> <span class="o">=</span> <span class="s2">&quot;60000&quot;</span><span class="p">,</span>
-    <span class="n">auxiliary</span> <span class="o">=</span> <span class="s2">&quot;30000&quot;</span><span class="p">,</span>
-    <span class="n">upper_limit</span> <span class="o">=</span> <span class="s2">&quot;1350&quot;</span><span class="p">,</span>
-    <span class="n">lower_limit</span> <span class="o">=</span> <span class="s2">&quot;350&quot;</span><span class="p">,</span>
-    <span class="n">target_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q101&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
-                        <span class="s2">&quot;q102&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-                        <span class="s2">&quot;q103&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
-                        <span class="s2">&quot;q104&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+    <span class="n">unique_identifier</span> <span class="o">=</span> <span class="s2">"12340000001-201409-q100"</span><span class="p">,</span>
+    <span class="n">principal_variable</span> <span class="o">=</span> <span class="s2">"50000000"</span><span class="p">,</span>
+    <span class="n">predictive</span> <span class="o">=</span> <span class="s2">"60000"</span><span class="p">,</span>
+    <span class="n">auxiliary</span> <span class="o">=</span> <span class="s2">"30000"</span><span class="p">,</span>
+    <span class="n">upper_limit</span> <span class="o">=</span> <span class="s2">"1350"</span><span class="p">,</span>
+    <span class="n">lower_limit</span> <span class="o">=</span> <span class="s2">"350"</span><span class="p">,</span>
+    <span class="n">target_variables</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q101"</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+                        <span class="s2">"q102"</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+                        <span class="s2">"q103"</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+                        <span class="s2">"q104"</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
     <span class="n">precision</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="p">)</span>
 </pre></div>
@@ -726,7 +726,7 @@ by the method</p></li>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">&#39;unique_identifier&#39;</span>:<span class="w"> </span><span class="s1">&#39;12340000001-201409-q100&#39;</span>,<span class="w"> </span><span class="s1">&#39;principal_final_value&#39;</span>:<span class="w"> </span><span class="s1">&#39;5.0E+4&#39;</span>,<span class="w"> </span><span class="s1">&#39;target_variables&#39;</span>:<span class="w"> </span><span class="o">[</span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q101&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">&#39;500&#39;</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">&#39;0.5&#39;</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q102&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">&#39;1000&#39;</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q103&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">&#39;1500&#39;</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">&#39;1.5&#39;</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">&#39;q104&#39;</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span>None<span class="o">)]</span>,<span class="w"> </span><span class="s1">&#39;tpc_ratio&#39;</span>:<span class="w"> </span><span class="s1">&#39;8.3E+2&#39;</span>,<span class="w"> </span><span class="s1">&#39;tpc_marker&#39;</span>:<span class="w"> </span><span class="s1">&#39;C&#39;</span><span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">'unique_identifier'</span>:<span class="w"> </span><span class="s1">'12340000001-201409-q100'</span>,<span class="w"> </span><span class="s1">'principal_final_value'</span>:<span class="w"> </span><span class="s1">'5.0E+4'</span>,<span class="w"> </span><span class="s1">'target_variables'</span>:<span class="w"> </span><span class="o">[</span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">'q101'</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">'500'</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">'0.5'</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">'q102'</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">'1000'</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">'1'</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">'q103'</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span><span class="s1">'1500'</span>,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span><span class="s1">'1.5'</span><span class="o">)</span>,<span class="w"> </span>TargetVariable<span class="o">(</span><span class="nv">identifier</span><span class="o">=</span><span class="s1">'q104'</span>,<span class="w"> </span><span class="nv">original_value</span><span class="o">=</span>None,<span class="w"> </span><span class="nv">final_value</span><span class="o">=</span>None<span class="o">)]</span>,<span class="w"> </span><span class="s1">'tpc_ratio'</span>:<span class="w"> </span><span class="s1">'8.3E+2'</span>,<span class="w"> </span><span class="s1">'tpc_marker'</span>:<span class="w"> </span><span class="s1">'C'</span><span class="o">}</span>
 </pre></div>
 </div>
 <p><strong>Applying method to multiple records</strong></p>
@@ -764,7 +764,7 @@ by the method</p></li>
     <span class="n">list_column_name</span><span class="p">,</span>
     <span class="n">prefix_attribute</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">custom_prefix</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">custom_suffix</span><span class="o">=</span><span class="s2">&quot;final_value&quot;</span><span class="p">,</span>
+    <span class="n">custom_suffix</span><span class="o">=</span><span class="s2">"final_value"</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="n">final_data</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -774,13 +774,13 @@ by the method</p></li>
 
         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_data</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">prefix_attribute</span><span class="p">:</span>
-                <span class="c1"># If the attribute doesn&#39;t exist N/A is added</span>
-                <span class="n">column_prefix</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">prefix_attribute</span><span class="p">,</span> <span class="s2">&quot;N/A&quot;</span><span class="p">)</span>
-                <span class="n">column_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column_prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">custom_suffix</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="c1"># If the attribute doesn't exist N/A is added</span>
+                <span class="n">column_prefix</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">prefix_attribute</span><span class="p">,</span> <span class="s2">"N/A"</span><span class="p">)</span>
+                <span class="n">column_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">column_prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">custom_suffix</span><span class="si">}</span><span class="s2">"</span>
                 <span class="n">data</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">final_value</span>
 
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">column_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">custom_prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">column_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">custom_prefix</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span>
                 <span class="n">data</span><span class="p">[</span><span class="n">column_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span>
 
         <span class="n">final_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -793,46 +793,46 @@ by the method</p></li>
     <span class="n">input_dataframe_thousand_pounds</span> <span class="o">=</span> <span class="n">load_csv</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">input_csv</span><span class="p">)</span>
 
     <span class="c1"># match target variable columns q&lt;number&gt;</span>
-    <span class="n">list_column_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;q\d+&quot;</span>
+    <span class="n">list_column_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">"q\d+"</span>
     <span class="n">target_variables</span> <span class="o">=</span> <span class="n">filter_columns_by_pattern</span><span class="p">(</span>
         <span class="n">input_dataframe_thousand_pounds</span><span class="p">,</span> <span class="n">list_column_pattern</span>
     <span class="p">)</span>
 
     <span class="n">thousand_pounds_output_columns</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s2">&quot;principal_final_value&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;target_variables&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;tpc_ratio&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;tpc_marker&quot;</span><span class="p">,</span>
+        <span class="s2">"principal_final_value"</span><span class="p">,</span>
+        <span class="s2">"target_variables"</span><span class="p">,</span>
+        <span class="s2">"tpc_ratio"</span><span class="p">,</span>
+        <span class="s2">"tpc_marker"</span><span class="p">,</span>
     <span class="p">]</span>
     <span class="n">test_thousand_pounds</span> <span class="o">=</span> <span class="n">wrapper</span><span class="p">(</span>
         <span class="n">input_dataframe_thousand_pounds</span><span class="p">,</span>
-        <span class="s2">&quot;thousand_pounds&quot;</span><span class="p">,</span>
+        <span class="s2">"thousand_pounds"</span><span class="p">,</span>
         <span class="n">output_columns</span><span class="o">=</span><span class="n">thousand_pounds_output_columns</span><span class="p">,</span>
-        <span class="n">unique_identifier_column</span><span class="o">=</span><span class="s2">&quot;RU&quot;</span><span class="p">,</span>
-        <span class="n">principal_variable_column</span><span class="o">=</span><span class="s2">&quot;principal_val&quot;</span><span class="p">,</span>
+        <span class="n">unique_identifier_column</span><span class="o">=</span><span class="s2">"RU"</span><span class="p">,</span>
+        <span class="n">principal_variable_column</span><span class="o">=</span><span class="s2">"principal_val"</span><span class="p">,</span>
         <span class="n">target_variables_columns</span><span class="o">=</span><span class="n">target_variables</span><span class="p">,</span>
-        <span class="n">upper_limit_column</span><span class="o">=</span><span class="s2">&quot;threshold_upper&quot;</span><span class="p">,</span>
-        <span class="n">lower_limit_column</span><span class="o">=</span><span class="s2">&quot;threshold_lower&quot;</span><span class="p">,</span>
-        <span class="n">predictive_column</span><span class="o">=</span><span class="s2">&quot;predictive_val&quot;</span><span class="p">,</span>
-        <span class="n">auxiliary_column</span><span class="o">=</span><span class="s2">&quot;aux_val&quot;</span><span class="p">,</span>
+        <span class="n">upper_limit_column</span><span class="o">=</span><span class="s2">"threshold_upper"</span><span class="p">,</span>
+        <span class="n">lower_limit_column</span><span class="o">=</span><span class="s2">"threshold_lower"</span><span class="p">,</span>
+        <span class="n">predictive_column</span><span class="o">=</span><span class="s2">"predictive_val"</span><span class="p">,</span>
+        <span class="n">auxiliary_column</span><span class="o">=</span><span class="s2">"aux_val"</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="c1"># Expand columns that contain a list of objects (e.g target_variable [TargetVariable(identifier=&#39;q42&#39;, original_value=&#39;32&#39;, final_value=&#39;0.032&#39;),...])</span>
+    <span class="c1"># Expand columns that contain a list of objects (e.g target_variable [TargetVariable(identifier='q42', original_value='32', final_value='0.032'),...])</span>
     <span class="c1"># and create separate columns e.g: q42_final_value</span>
     <span class="n">final_data</span> <span class="o">=</span> <span class="n">expand_list_column</span><span class="p">(</span>
         <span class="n">df</span><span class="o">=</span><span class="n">test_thousand_pounds</span><span class="p">,</span>
-        <span class="n">list_column_name</span><span class="o">=</span><span class="s2">&quot;target_variables&quot;</span><span class="p">,</span>
-        <span class="n">prefix_attribute</span><span class="o">=</span><span class="s2">&quot;identifier&quot;</span><span class="p">,</span>
+        <span class="n">list_column_name</span><span class="o">=</span><span class="s2">"target_variables"</span><span class="p">,</span>
+        <span class="n">prefix_attribute</span><span class="o">=</span><span class="s2">"identifier"</span><span class="p">,</span>
     <span class="p">)</span>
 
     <span class="c1"># Create a new DataFrame from the final_data list</span>
     <span class="n">final_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">final_data</span><span class="p">)</span>
 
-    <span class="c1"># Drop the &quot;target_variables&quot; column</span>
-    <span class="n">final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target_variables&quot;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Drop the "target_variables" column</span>
+    <span class="n">final_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">"target_variables"</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Move the tpc_marker to be the last column</span>
-    <span class="n">column_to_move</span> <span class="o">=</span> <span class="s2">&quot;tpc_marker&quot;</span>
+    <span class="n">column_to_move</span> <span class="o">=</span> <span class="s2">"tpc_marker"</span>
 
     <span class="c1"># Define the desired column order with the specified column at the end</span>
     <span class="n">column_order</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">final_df</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">column_to_move</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span>
@@ -850,9 +850,9 @@ by the method</p></li>
 <p>Finally, apply the wrapper to your data. You will need to edit this code to match 1) the file path to the directory where you have your input data, 2) the file name of the input data, and 3) the desired file name of the output file that will be created.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">run_thousand_pounds_with_pandas</span><span class="p">(</span>
-    <span class="s2">&quot;&lt;your_file_path&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;&lt;input_data_name&gt;.csv&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;&lt;output_file_name&gt;.csv&quot;</span><span class="p">,</span>
+    <span class="s2">"&lt;your_file_path&gt;"</span><span class="p">,</span>
+    <span class="s2">"&lt;input_data_name&gt;.csv"</span><span class="p">,</span>
+    <span class="s2">"&lt;output_file_name&gt;.csv"</span><span class="p">,</span>
 <span class="p">)</span>
 
 </pre></div>

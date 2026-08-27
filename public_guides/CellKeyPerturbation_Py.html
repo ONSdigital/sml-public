@@ -658,16 +658,16 @@ perturbation is applied.</p></li>
 <ol class="arabic simple" start="2">
 <li><p>Define full names of the microdata and perturbation table in the BigQuery with full location, for example:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">microdata</span> <span class="o">=</span> <span class="s2">&quot;&lt;PROJECT_ID&gt;.&lt;DATASET_ID&gt;.&lt;microdata&gt;&quot;</span>
-<span class="n">ptable</span> <span class="o">=</span> <span class="s2">&quot;&lt;PROJECT_ID&gt;.&lt;DATASET_ID&gt;.&lt;ptable&gt;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">microdata</span> <span class="o">=</span> <span class="s2">"&lt;PROJECT_ID&gt;.&lt;DATASET_ID&gt;.&lt;microdata&gt;"</span>
+<span class="n">ptable</span> <span class="o">=</span> <span class="s2">"&lt;PROJECT_ID&gt;.&lt;DATASET_ID&gt;.&lt;ptable&gt;"</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Define variables and parameters, for example:</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geog</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Region&quot;</span><span class="p">]</span>
-<span class="n">tab_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span><span class="s2">&quot;Health&quot;</span><span class="p">,</span><span class="s2">&quot;Occupation&quot;</span><span class="p">]</span>
-<span class="n">record_key</span> <span class="o">=</span> <span class="s2">&quot;record_key&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geog</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Region"</span><span class="p">]</span>
+<span class="n">tab_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Age"</span><span class="p">,</span><span class="s2">"Health"</span><span class="p">,</span><span class="s2">"Occupation"</span><span class="p">]</span>
+<span class="n">record_key</span> <span class="o">=</span> <span class="s2">"record_key"</span>
 <span class="n">threshold</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
@@ -696,7 +696,7 @@ perturbation is applied.</p></li>
 <ol class="arabic simple" start="5">
 <li><p>The returned <code class="docutils literal notranslate"><span class="pre">perturbed_table</span></code> is a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>. You need to drop disclosive columns before exporting the output from the secure data environment. Please refer to the <strong>“Interpreting the Output”</strong> and <strong>“Saving the Output”</strong> sections below for more details.</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span> <span class="o">=</span> <span class="n">perturbed_table</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pre_sdc_count&quot;</span><span class="p">,</span> <span class="s2">&quot;ckey&quot;</span><span class="p">,</span> <span class="s2">&quot;pcv&quot;</span><span class="p">,</span> <span class="s2">&quot;pvalue&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span> <span class="o">=</span> <span class="n">perturbed_table</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"pre_sdc_count"</span><span class="p">,</span> <span class="s2">"ckey"</span><span class="p">,</span> <span class="s2">"pcv"</span><span class="p">,</span> <span class="s2">"pvalue"</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
@@ -800,9 +800,9 @@ use the following code:</p>
 </div>
 <p>Then, use the following code to generate the perturbed table using the sample microdata and perturbation table:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">perturbed_table</span> <span class="o">=</span> <span class="n">create_perturbed_table</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">microdata</span><span class="p">,</span>
-                                         <span class="n">record_key</span> <span class="o">=</span> <span class="s2">&quot;record_key&quot;</span><span class="p">,</span>
-                                         <span class="n">geog</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;var1&quot;</span><span class="p">],</span>
-                                         <span class="n">tab_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;var5&quot;</span><span class="p">,</span><span class="s2">&quot;var8&quot;</span><span class="p">],</span>
+                                         <span class="n">record_key</span> <span class="o">=</span> <span class="s2">"record_key"</span><span class="p">,</span>
+                                         <span class="n">geog</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"var1"</span><span class="p">],</span>
+                                         <span class="n">tab_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"var5"</span><span class="p">,</span><span class="s2">"var8"</span><span class="p">],</span>
                                          <span class="n">ptable</span> <span class="o">=</span> <span class="n">ptable_10_5</span><span class="p">,</span>
                                          <span class="n">threshold</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
@@ -908,7 +908,7 @@ contingency table is published. Otherwise, the perturbation can be unpicked and 
 <section id="saving-the-output">
 <h2>Saving the Output<a class="headerlink" href="#saving-the-output" title="Link to this heading">#</a></h2>
 <p>Before the table is ready to be published the disclosive columns must be dropped. These cannot be output as they would allow for the perturbation to be unpicked. This code assumes that you have not changed the default column names; please update it if you have. <code class="docutils literal notranslate"><span class="pre">drop()</span></code> will work on a list of column names in this case, and this code puts it in a new dataframe.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span> <span class="o">=</span> <span class="n">perturbed_table</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pre_sdc_count&quot;</span><span class="p">,</span> <span class="s2">&quot;ckey&quot;</span><span class="p">,</span> <span class="s2">&quot;pcv&quot;</span><span class="p">,</span> <span class="s2">&quot;pvalue&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">output_table</span> <span class="o">=</span> <span class="n">perturbed_table</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"pre_sdc_count"</span><span class="p">,</span> <span class="s2">"ckey"</span><span class="p">,</span> <span class="s2">"pcv"</span><span class="p">,</span> <span class="s2">"pvalue"</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>To save this dataframe as a csv use the pandas to_csv method:</p>
