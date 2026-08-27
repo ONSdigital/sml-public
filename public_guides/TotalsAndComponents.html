@@ -576,6 +576,7 @@
 <li><p>The method can only observe and satisfy one fixed relationship at a time (i.e., only one set of components and total)</p></li>
 <li><p>Both the total value and at least one corresponding component are populated for the target period</p></li>
 <li><p>The components are all the same data type e.g., all returned or imputed. The total variable type does not impact this.</p></li>
+<li><p>The method has not been designed to manage negative values.</p></li>
 </ul>
 </section>
 <section id="how-to-use-the-method">
@@ -780,7 +781,7 @@ Threshold need to be provided.</p></li>
 <p>The method can be used in two ways:</p>
 <ol class="arabic simple">
 <li><p>a single record can be specified as the input parameters to the method</p></li>
-<li><p>mutiple records can be supplied as a pandas dataframe to a wrapper function</p></li>
+<li><p>multiple records can be supplied as a pandas dataframe to a wrapper function</p></li>
 </ol>
 <p>The following code can be used to run totals &amp; components on a single record.
 This example uses the first record in the example dataset.</p>
